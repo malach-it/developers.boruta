@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'boruta documentation',
+  title: 'boruta',
   tagline: 'Lightweight Identity and Access Managemennt solution',
   favicon: 'img/favicon.ico',
 
@@ -34,8 +34,8 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      'docusaurus-preset-openapi',
+      /** @type {import('docusaurus-preset-openapi').Options} */
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -43,6 +43,10 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/malach-it/developers.boruta/docs/',
+        },
+        api: {
+          path: "openapi/boruta-admin.openapi.json",
+          routeBasePath: "/api",
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -71,6 +75,10 @@ const config = {
             sidebarId: 'borutaSidebar',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            href: '/api',
+            label: 'API documentation',
           },
           {
             href: 'https://github.com/malach-it/boruta-server',
@@ -110,7 +118,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} patatoid, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} patatoid. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
