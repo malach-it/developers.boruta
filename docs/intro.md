@@ -6,6 +6,8 @@ Boruta is an __OAuth 2.0 and OpenID Connect authorization provider__. As an __Id
 
 boruta is composed of an __authorization server__, an __administration interface__, an __identity provider__ and a __gateway__ for gathering all API security related needs for a serivce composed of one or more backends. It enables to have Single Sign On and identity federation capabilities following the OAuth 2.0 framework.
 
+<div class="centered"><img src="/assets/images/components.png" /></div>
+
 ## Why another authorization provider?
 
 boruta has been designed to be both __end-user and developer friendly__. With a high level of customization, it helps to have an immersive experience for your users giving them the interfaces you designed. The administration interface gives an exhaustive set of configuration switches that is also accessible through REST API calls for automation.

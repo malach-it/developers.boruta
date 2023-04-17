@@ -18,11 +18,10 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`boruta server website`}
+      description="Boruta is a lightweight Identity and Access Management solution.">
       <HomepageHeader />
       <main>
       </main>
