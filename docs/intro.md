@@ -47,4 +47,4 @@ The initial beta release has been certified by the OpenID Foundation for the Bas
 
 3. Have a better insight of the [gateway](gateway/reverse-proxying.md)
 
-4. Get a deeper information about the [specifications](specifications/oauth-2.0/README.md)
+4. Get a deeper information about the [specifications](specifications/oauth-2.0/introduction)
