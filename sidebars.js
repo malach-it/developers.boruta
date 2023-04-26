@@ -30,7 +30,7 @@ const sidebars = {
         'provider-configuration/configure-backends',
         'provider-configuration/configure-scopes',
         'provider-configuration/configure-upstreams',
-        'provider-configuration/management-api'
+        'provider-configuration/management-api',
       ],
     },
     {
@@ -38,7 +38,7 @@ const sidebars = {
       label: 'Deployment',
       items: [
         'deployment/docker',
-        'deployment/standalone'
+        'deployment/standalone',
       ],
     },
     {
@@ -46,7 +46,38 @@ const sidebars = {
       label: 'Gateway',
       items: [
         'gateway/reverse-proxying',
-        'gateway/authorization'
+        'gateway/authorization',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Specifications',
+      items: [
+        'specifications/endpoints',
+        {
+          type: 'category',
+          label: 'OAuth 2.0',
+          items: [
+            'specifications/oauth-2.0/introduction',
+            'specifications/oauth-2.0/authorization-code-grant',
+            'specifications/oauth-2.0/client-credentials',
+            'specifications/oauth-2.0/implicit',
+            'specifications/oauth-2.0/resource-owner-password-credentials',
+            'specifications/oauth-2.0/pkce',
+            'specifications/oauth-2.0/introspect',
+            'specifications/oauth-2.0/revoke',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'OpenID Connect',
+          items: [
+            'specifications/openid-connect/introduction',
+            'specifications/openid-connect/hybrid-grant',
+            'specifications/openid-connect/id-tokens',
+            'specifications/openid-connect/sessions',
+          ],
+        },
       ],
     },
   ],
