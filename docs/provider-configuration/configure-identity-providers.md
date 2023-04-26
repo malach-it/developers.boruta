@@ -46,4 +46,7 @@ The administration interface gives the ability to create, update and delete iden
 
 All identity provider operations are accessible through a REST API following the below description. All identity provider management endpoints are protected with a Bearer token that can be obtained with any OAuth flow. In order to get access, you need to have an access token with the [private](configure-scopes.md#public-vs-private-scopes) scope `identity-providers:manage:all` granted.
 
-> Have a look at [management API](provider-configuration/management-api.md)
+
+> Have a look at [How to get restricted access](management-api#get-an-access-token)
+
+> Have a look at [API documentation](/api/list-identity-providers)
