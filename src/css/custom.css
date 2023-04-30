@@ -32,3 +32,8 @@
 .centered {
   text-align: center;
 }
+img {
+  width: auto;
+  margin: auto;
+  max-width: 100%;
+}

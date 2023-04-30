@@ -24,6 +24,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Provider configuration',
+      collapsed: false,
       items: [
         'provider-configuration/configure-clients',
         'provider-configuration/configure-identity-providers',
@@ -36,50 +37,51 @@ const sidebars = {
     {
       type: 'category',
       label: 'Deployment',
+      collapsed: false,
       items: [
         'deployment/docker',
         'deployment/standalone',
       ],
     },
-    {
-      type: 'category',
-      label: 'Gateway',
-      items: [
-        'gateway/reverse-proxying',
-        'gateway/authorization',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Specifications',
-      items: [
-        'specifications/endpoints',
-        {
-          type: 'category',
-          label: 'OAuth 2.0',
-          items: [
-            'specifications/oauth-2.0/introduction',
-            'specifications/oauth-2.0/authorization-code-grant',
-            'specifications/oauth-2.0/client-credentials',
-            'specifications/oauth-2.0/implicit',
-            'specifications/oauth-2.0/resource-owner-password-credentials',
-            'specifications/oauth-2.0/pkce',
-            'specifications/oauth-2.0/introspect',
-            'specifications/oauth-2.0/revoke',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'OpenID Connect',
-          items: [
-            'specifications/openid-connect/introduction',
-            'specifications/openid-connect/hybrid-grant',
-            'specifications/openid-connect/id-tokens',
-            'specifications/openid-connect/sessions',
-          ],
-        },
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Gateway',
+    //   items: [
+    //     'gateway/reverse-proxying',
+    //     'gateway/authorization',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   label: 'Specifications',
+    //   items: [
+    //     'specifications/endpoints',
+    //     {
+    //       type: 'category',
+    //       label: 'OAuth 2.0',
+    //       items: [
+    //         'specifications/oauth-2.0/introduction',
+    //         'specifications/oauth-2.0/authorization-code-grant',
+    //         'specifications/oauth-2.0/client-credentials',
+    //         'specifications/oauth-2.0/implicit',
+    //         'specifications/oauth-2.0/resource-owner-password-credentials',
+    //         'specifications/oauth-2.0/pkce',
+    //         'specifications/oauth-2.0/introspect',
+    //         'specifications/oauth-2.0/revoke',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'OpenID Connect',
+    //       items: [
+    //         'specifications/openid-connect/introduction',
+    //         'specifications/openid-connect/hybrid-grant',
+    //         'specifications/openid-connect/id-tokens',
+    //         'specifications/openid-connect/sessions',
+    //       ],
+    //     },
+    //   ],
+    // },
   ],
 
   // But you can create a sidebar manually

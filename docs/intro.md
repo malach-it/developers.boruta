@@ -18,7 +18,13 @@ As an __open-source product__, it takes the advantage to being backed by a commu
 
 This server has been __designed for scalability__, the firsts load tests were performed at 1500 requests per second with a standard production server with no latency issues. The Erlang Virtual Machine used as a platform makes it also scallable in an horizontal way providing more machines and connecting them together.
 
-## About gateways
+## About an identity provider
+
+boruta comes up with an __integrated idenity provider__, it can both __store the users' credentials__ internaly and connect to a __LDAP compliant__ server (Active Directory is). It helps more than enable password authentication abilities, to __enhance users__ with features like having __custom attributes__, __enforce email confirmation__, or __consent__ to the client's requested scopes.
+
+Multi-Factor authentication up to Self-Sovereign Identity are on the roadmap but still not implemented yet.
+
+## About a gateway
 
 boruta is __coupled to a gateway__ that acts as a __reverse-proxy__ sitting between your frontends and backends in order to __apply security rules__ in a fast and non-intrusive way. To perform those access restrictions, the gateway is based on boruta-provided access tokens and according granted scopes to mitigate the traffic and allows to get access to OpenID profile attributes in a secure way.
 
@@ -44,7 +50,3 @@ The initial beta release has been certified by the OpenID Foundation for the Bas
 1. Understand how to configure the server in [provider configuration](provider-configuration/configure-clients.md)
 
 2. Set up boruta into your infrastructure with [deployment](deployment/docker.md)
-
-3. Have a better insight of the [gateway](gateway/reverse-proxying.md)
-
-4. Get a deeper information about the [specifications](specifications/oauth-2.0/introduction)
