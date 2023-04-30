@@ -67,14 +67,10 @@ const config = {
         },
         items: [
           {
-            href: '/',
-            label: 'Home',
-          },
-          {
             type: 'docSidebar',
             sidebarId: 'borutaSidebar',
             position: 'left',
-            label: 'Documentation',
+            label: 'Home',
           },
           {
             href: '/api',
