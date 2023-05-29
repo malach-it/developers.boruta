@@ -1,6 +1,6 @@
 # Backends configuration
 
-Backends act as user registries storing user related information for a better management. They use a configurable identity source to keep identities safe but accessible for a better management.
+Backends act as __user registries__ storing user related information for a better management. They use a configurable __identity source__ to keep identities safe but accessible for a better management. On top of that it gives __enhanced abilities__ to those users like custom attributes or email confirmation.
 
 ## Architecture
 
@@ -34,6 +34,10 @@ You can also configure a pool of connection to a LDAP server setting the configu
 ### SMTP client
 
 boruta users are enhanced with features like email confirmation or password reset. In order to send the according emails, you can configure a connection to an SMTP server for it to send the needed emails.
+
+### User metadata
+
+As user enhancement, there is also the ability to add attributes to users. Starting by being named, you can setup scope restriction in order for the attributes to be visible in the ID token or the userinfo only when the client requested certain scopes that are to be defined here. Last, the scopes are editable by the users on the user edition page. You can disable the ability of edition here.
 
 ## Manage through User Interface
 

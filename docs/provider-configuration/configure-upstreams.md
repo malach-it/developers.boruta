@@ -22,5 +22,5 @@ The authorized requests are enhanced with current request information providing 
 
 ![microgateways](/assets/images/boruta-microgateway.png)
 
-__More than a single gateway__, boruta can act as a microgateway. Using infrastructure to connect boruta instances together, you __can have a sidecar__ connected to one or some of your backends. You can choose the active node configuration with the `Node` attribute of upstreams. It will use the instance ip as default but can be edited with the usage of static configuration (see below). Note that the gateway and the microgateway will respectively exposed on the ports set by `BORUTA_GATEWAY_PORT` and `BORUTA_GATEWAY_SIDECAR_PORT` environment variables.
+__More than a single gateway__, boruta can act as a microgateway. Using infrastructure to connect boruta instances together, you __can have sidecars__ connected to one or some of your backends. You can choose the active node configuration with the `Node` attribute of upstreams. It will use the instance ip as default but can be edited with the usage of static configuration (see below). Note that the gateway and the microgateway will respectively exposed on the ports set by `BORUTA_GATEWAY_PORT` and `BORUTA_GATEWAY_SIDECAR_PORT` environment variables.
 

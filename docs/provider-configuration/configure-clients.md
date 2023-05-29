@@ -1,6 +1,6 @@
 # Clients configuration
 
-Clients represent the applications that need to get authorized access to a service (Resource Server). Boruta helps them to obtain tokens following OAuth 2.0 and OpenID Connect specifications so that they can present them to prove their access rights.
+Clients represent the applications that need to __get authorized access__ to a restricted HTTP service (Resource Server). Boruta helps them to __obtain tokens following OAuth 2.0 and OpenID Connect specifications__ so that they can present them to prove their access rights.
 
 ## Architecture
 

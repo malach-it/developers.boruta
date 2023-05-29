@@ -1,6 +1,6 @@
 # Identity providers configuration
 
-Identity providers are the entities helping to customize the end-user authentication, and identity management pages and enabled features.
+Identity providers are the entities helping to __customize the end-user authentication__, and identity management templates and enabled features.
 
 ## Architecture
 
