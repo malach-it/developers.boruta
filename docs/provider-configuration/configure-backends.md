@@ -39,6 +39,10 @@ boruta users are enhanced with features like email confirmation or password rese
 
 As user enhancement, there is also the ability to add attributes to users. Starting by being named, you can setup scope restriction in order for the attributes to be visible in the ID token or the userinfo only when the client requested certain scopes that are to be defined here. Last, the scopes are editable by the users on the user edition page. You can disable the ability of edition here.
 
+### Identity federation
+
+This server enable to configure "login with" buttons enabling identity federation. That federation is made by setting the OAuth configuration for the application you created on the federated provider. Providing the name, used to identify the configuration, the server client_id, client_secret and endpoints needed to authenticate, boruta will be able to connect to the server enabling thrid-party authentication. You can also gather protected resources from this provider filling the metadata endpoints. Those will be available as read-only user metadata information. In templates, the login url will be available as `federated_servers.<name>.login_url` variable in order for the integrator to implement the according "login with" button.
+
 ## Manage through User Interface
 
 The Administration interface gives the ability to create, update and delete backends. All backend attributes are accessible via the captured form below. All these operations can be managed in the "Identity providers > list backends" section in the sidebar menu.
