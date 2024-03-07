@@ -1,8 +1,11 @@
 # Backends configuration
 
+## Introduction
+
 Backends act as __user registries__ storing user related information for a better management. 
 
-They use a configurable __identity source__ to keep identities safe but accessible for a better management. On top of that it gives __enhanced abilities__ to those users like custom attributes or email confirmation.
+They use a configurable __identity source__ to keep identities safe but accessible for a better management. 
+On top of that, they provide __enhanced abilities__ to those users like custom attributes or email confirmation.
 
 ---
 

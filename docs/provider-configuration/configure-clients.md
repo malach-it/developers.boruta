@@ -1,6 +1,11 @@
 # Clients configuration
 
-Clients represent the applications that need to __get authorized access__ to a restricted HTTP service (Resource Server). Boruta helps them to __obtain tokens following OAuth 2.0 and OpenID Connect specifications__ so that they can present them to prove their access rights.
+
+## Introduction
+
+Clients represent the applications that need to __get authorized access__ to a restricted HTTP service (Resource Server). 
+
+Boruta helps them to __obtain tokens following OAuth 2.0 and OpenID Connect specifications__ so that they can present them to prove their access rights.
 
 ---
 
@@ -18,7 +23,7 @@ Check the [identity provider configuration](provider-configuration/configure-ide
 
 ## Configuration
 
-Client attributes help manage the authorization capabilities during OAuth / OpenID Connect flows.
+Client attributes help manage the authorization capabilities during OAuth / OpenID Connect flows:
 
 * `id` would be the identifier of the client, it will be used as the OAuth `client_id` parameter. Note that once the client is created this value can't be changed.
 * `secret` would be used as the `client_secret` parameter in OAuth flows.
@@ -40,7 +45,11 @@ Client attributes help manage the authorization capabilities during OAuth / Open
 
 ## Client confidentiality
 
-The access to most of the OAuth and OpenID Connect provider endpoints is protected by providing a couple `client_id` / `client_secret` aiming to identify the client that performs the request. This authentication follows the Basic Authorization or can be provided as body parameters. As stated in OAuth 2.0 RFC, the server gives the ability to set clients as confidential requesting the client secret in more cases. 
+The access to most of the OAuth and OpenID Connect provider endpoints is protected by providing a couple `client_id` / `client_secret` aiming to identify the client that performs the request. 
+
+This authentication follows the Basic Authorization or can be provided as body parameters. 
+
+As stated in [OAuth 2.0 RFC](https://www.rfc-editor.org/rfc/rfc6749), servers can treat some clients as private and ask them for a secret code more often.
 
 Rules of requesting client credentials acts as follow:
 
