@@ -36,6 +36,18 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Integration use cases',
+      collapsed: false,
+      items: [
+        'client-credentials',
+        'code-grant',
+        'hybrid-grant',
+        'implicit-grant',
+        'ropc',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Deployment',
       collapsed: false,
       items: [

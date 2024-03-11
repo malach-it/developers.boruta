@@ -3,13 +3,13 @@ title: Client credentials
 ---
 
 :::info
-Please refer to [the authentication overview page]() for a more general approach of how authentication works.
-!!!
+Please refer to [the authentication overview page] for a more general approach of how authentication works.
+:::
 
 ---
 ## Description
 
-The Client Credentials Grant is a server-to-server authentication mechanism defined in the [OAuth 2.0](https://www.rfc-editor.org/rfc/rfc6749#section-1.3.4) framework. 
+The Client Credentials Grant is a server-to-server authentication mechanism defined in the [OAuth 2.0](https://www.rfc-editor.org/rfc/rfc6749#section-1.3.4) framework.
 
 It is designed for scenarios where an application, acting on its own behalf rather than on behalf of an individual user, requires access to a protected resource.
 

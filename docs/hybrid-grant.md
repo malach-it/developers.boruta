@@ -3,8 +3,8 @@ title: Hybrid grant
 ---
 
 :::info
-Please refer to [the authentication overview page]() for a more general approach of how authentication works.
-!!!
+Please refer to [the authentication overview page] for a more general approach of how authentication works.
+:::
 
 ---
 
@@ -12,7 +12,7 @@ Please refer to [the authentication overview page]() for a more general approach
 
 The Hybrid Grant is a sophisticated flow introduced by [OpenID Connect](https://openid.net/developers/how-connect-works/), an authentication layer built on top of [the OAuth 2.0 protocol](https://www.rfc-editor.org/rfc/rfc6749#), developed by the OpenID Foundation.
 
-This flow is designed to handle both authentication and authorization processes by providing additional identity information alongside the standard OAuth access token. 
+This flow is designed to handle both authentication and authorization processes by providing additional identity information alongside the standard OAuth access token.
 
 The Hybrid Grant allows a client application to receive **an authorization code** and an **ID token** (and optionally an access token) directly from the authorization request, combining elements from both the Authorization Code and Implicit Grants.
 

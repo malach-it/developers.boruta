@@ -1,10 +1,10 @@
 ---
-title: Ressource Owner Password Flow
+title: Ressource Owner Password Credentials
 ---
 
 :::info
-Please refer to [the authentication overview page]() for a more general approach of how authentication works.
-!!!
+Please refer to [the authentication overview page] for a more general approach of how authentication works.
+:::
 
 ---
 
@@ -16,7 +16,7 @@ The Resource Owner Password Credentials Grant (ROPC) allows a client application
 
 This flow **bypasses the need for a user to be redirected to an authentication page**, streamlining access in specific scenarios.
 
-The process involves the client submitting the resource owner's credentials to the authorization server, which then validates these credentials and returns an **access token**. 
+The process involves the client submitting the resource owner's credentials to the authorization server, which then validates these credentials and returns an **access token**.
 
 This token grants the client application authorization to access the protected resources on the resource server on behalf of the resource owner.
 

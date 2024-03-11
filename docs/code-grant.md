@@ -1,16 +1,16 @@
 ---
-title: Code grant
+title: Authorization Code grant
 ---
 
 :::info
-Please refer to [the authentication overview page]() for a more general approach of how authentication works.
-!!!
+Please refer to [the authentication overview page] for a more general approach of how authentication works.
+:::
 
 ---
 
 ## Description
 
-The Authorization Code Grant is considered the most secure flow within the OAuth 2.0 specification, particularly suited for applications capable of securely maintaining a client secret. 
+The Authorization Code Grant is considered the most secure flow within the OAuth 2.0 specification, particularly suited for applications capable of securely maintaining a client secret.
 
 This flow involves a **three-legged authorization process** involving the user's browser (user agent), the client application, and the authorization server (AS). It is designed to securely authenticate the user and authorize the client application without exposing the user's credentials to the client.
 
@@ -21,7 +21,7 @@ The process includes the following steps:
 * The client then exchanges this authorization code for an access token by making a request to the authorization server, including its client ID and client secret for authentication.
 * The authorization server validates the request and issues an access token (and optionally a refresh token) to the client.
 
-For public clients, such as mobile or SPA applications, which cannot securely store a client secret, the Authorization Code Grant can be augmented with [Proof Key for Code Exchange (PKCE)](https://oauth.net/2/pkce/). 
+For public clients, such as mobile or SPA applications, which cannot securely store a client secret, the Authorization Code Grant can be augmented with [Proof Key for Code Exchange (PKCE)](https://oauth.net/2/pkce/).
 
 PKCE adds an additional layer of security by requiring the client to send a cryptographically related code verifier along with the authorization code when exchanging it for an access token. This mechanism protects against interception and unauthorized code exchange attempts.
 

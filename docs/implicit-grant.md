@@ -3,14 +3,14 @@ title: Implicit grant
 ---
 
 :::info
-Please refer to [the authentication overview page]() for a more general approach of how authentication works.
-!!!
+Please refer to [the authentication overview page] for a more general approach of how authentication works.
+:::
 
 ---
 
 ## Description
 
-The Implicit Grant is tailored specifically for **client-side applications**, particularly those running in a **browser environment**, such as JavaScript applications. 
+The Implicit Grant is tailored specifically for **client-side applications**, particularly those running in a **browser environment**, such as JavaScript applications.
 
 This [OAuth 2.0](https://www.rfc-editor.org/rfc/rfc6749#section-4.2) flow facilitates the direct issuance of an access token to the client application without the need for intermediary authorization codes, streamlining authentication for scenarios where the application cannot securely store credentials.
 
