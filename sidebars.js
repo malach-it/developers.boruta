@@ -19,7 +19,11 @@ const sidebars = {
       type: 'category',
       label: 'Introduction',
       link: {type: 'doc', id: 'intro'},
-      items: [],
+      items: [
+        'intro',
+        'auth-framework-overview',
+        'ssi-overview'
+      ],
     },
     {
       type: 'category',

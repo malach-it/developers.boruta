@@ -1,11 +1,12 @@
+# OAuth 2.0 framework overview
 
 ## Context
 
-The [OAuth 2.0 authorization framework](https://datatracker.ietf.org/doc/html/rfc6749) was officially published as RFC 6749 in October 2012 by the Internet Engineering Task Force (IETF). 
+The [OAuth 2.0 authorization framework](https://datatracker.ietf.org/doc/html/rfc6749) was officially published as RFC 6749 in October 2012 by the Internet Engineering Task Force (IETF).
 
 The primary goal of this authorization framework was to provide a **secure** and **standardized** way for applications to obtain limited access to user accounts on an HTTP service, such as Facebook, GitHub, or Google. It was designed to work on the web but has since been adapted for application use.
 
-> This protocol enables users to grant third-party access to their web resources without sharing their passwords, thus enhancing security and convenience. 
+> This protocol enables users to grant third-party access to their web resources without sharing their passwords, thus enhancing security and convenience.
 
 OAuth 2.0 streamlined the process over its predecessor, OAuth 1.0, by simplifying the client-side scripting and offering multiple flows to cater to various application scenarios, from web applications running on a server to native mobile apps and desktop applications.
 
@@ -17,7 +18,7 @@ The OAuth 2.0 standard revolutionizes the traditional client-server authenticati
 
 It addresses the risks and constraints of sharing the resource owner's credentials with third-party applications, such as storing passwords in clear text and granting unfettered access to protected resources.
 
-With OAuth, resource owners can **authorize third-party clients to access their resources without sharing their credentials**. 
+With OAuth, resource owners can **authorize third-party clients to access their resources without sharing their credentials**.
 
 Access tokens, which denote specific permissions, duration, and other attributes, are granted by an authorization server upon resource owner's approval. These tokens, distinct from the resource owner's credentials, mitigate the risk of data compromise due to third-party application breaches.
 
@@ -39,7 +40,7 @@ The OAuth 2.0 relies on key roles:
 
 ## OAuth 2.0 Authorization flow
 
-![OAuth 2.0 authentication framework overview](/static/assets/images/authz-global.png "OAuth 2.0 authentication framework overview")
+<div class="centered"><img src="/assets/images/authz-global.png" alt="OAuth 2.0 authentication framework overview" /></div>
 
 ### 1. Authorization Grant
 

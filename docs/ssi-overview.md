@@ -1,8 +1,8 @@
-
+# About Self-Sovereign Identity
 
 ## Context
 
-In the evolution of digital identity management, the [OAuth 2.0 authorization framework](https://datatracker.ietf.org/doc/html/rfc6749) has been a pivotal standard, providing secure delegated access to resources. Yet, a newer paradigm is emerging that promises to revolutionize how identities are managed online: **the Self-Sovereign Identity (SSI)**. 
+In the evolution of digital identity management, the [OAuth 2.0 authorization framework](https://datatracker.ietf.org/doc/html/rfc6749) has been a pivotal standard, providing secure delegated access to resources. Yet, a newer paradigm is emerging that promises to revolutionize how identities are managed online: **the Self-Sovereign Identity (SSI)**.
 
 SSI positions the individual at the center of the digital identity narrative, providing a more personal and autonomous approach to identity management.
 
@@ -12,7 +12,7 @@ SSI positions the individual at the center of the digital identity narrative, pr
 
 ## What is SSI?
 
-Self-Sovereign Identity is a **user-centric model of digital identity** that gives individuals full control over the creation, management, and use of their digital identities, without reliance on centralized authorities. 
+Self-Sovereign Identity is a **user-centric model of digital identity** that gives individuals full control over the creation, management, and use of their digital identities, without reliance on centralized authorities.
 
 It ensures that individuals can present verifiable credentials in a digital format and interact in the digital world with the same freedom and capacity for trust as they do in the offline world.
 
@@ -52,6 +52,6 @@ The implications of SSI are broad and potentially transformative:
 - **User Experience**: Simplified verification processes, with no need for multiple usernames and passwords.
 - **Inclusion**: The potential to provide secure digital identities to those who currently lack access to online services.
 
-Self-Sovereign Identity marks a shift towards a more secure, private, and user-friendly method of managing digital identities. 
+Self-Sovereign Identity marks a shift towards a more secure, private, and user-friendly method of managing digital identities.
 
 As adoption grows, it could very well redefine the landscape of digital interactions, trust, and online freedom.
