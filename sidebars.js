@@ -18,6 +18,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Introduction',
+      collapsed: false,
       link: {type: 'doc', id: 'intro'},
       items: [
         'intro',
