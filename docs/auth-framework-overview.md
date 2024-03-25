@@ -4,11 +4,15 @@
 
 The [OAuth 2.0 authorization framework](https://datatracker.ietf.org/doc/html/rfc6749) was officially published as RFC 6749 in October 2012 by the Internet Engineering Task Force (IETF).
 
-The primary goal of this authorization framework was to provide a **secure** and **standardized** way for applications to obtain limited access to user accounts on an HTTP service, such as Facebook, GitHub, or Google. It was designed to work on the web but has since been adapted for application use.
+The primary goal of this authorization framework was to provide a **secure** and **standardized** way for applications to obtain limited access to user accounts on an HTTP service, such as Facebook, GitHub, or Google. It was designed to work on the web but has since been adapted for application use. Major platforms have implemented this specification by providing users with "Log in with" buttons, simplifying the authentication process.
 
 > This protocol enables users to grant third-party access to their web resources without sharing their passwords, thus enhancing security and convenience.
 
 OAuth 2.0 streamlined the process over its predecessor, OAuth 1.0, by simplifying the client-side scripting and offering multiple flows to cater to various application scenarios, from web applications running on a server to native mobile apps and desktop applications.
+
+:::info
+Discover our blog article ["boruta meets Self-Sovereign Identity as a Verifiable Credential issuer"](https://medium.com/@io.pascal.knoth/boruta-meets-self-sovereign-identity-as-a-verifiable-credential-issuer-479f2ffa5f4e) on Medium to learn more.
+:::
 
 ---
 
@@ -28,11 +32,11 @@ Access tokens, which denote specific permissions, duration, and other attributes
 
 The OAuth 2.0 relies on key roles:
 
-- **The resource owner**: Typically the end-user, the resource owner is capable of granting permission to access their resources hosted by the resource server.
+- **The Authorization Server (AS)** is the trusted entity that verifies the identity of the resource owner and issues access tokens after successful authentication.
 
 - **The client** is the application or service that desires to access the resource owner's data. This client could be a website, a mobile application, or a server-side application.
 
-- **The Authorization Server (AS)** is the trusted entity that verifies the identity of the resource owner and issues access tokens after successful authentication.
+- **The resource owner**: Typically the end-user, the resource owner is capable of granting permission to access their resources hosted by the resource server.
 
 - **The Resource Server (RS)** is the server that hosts the protected resources and accepts or denies requests from a client based on the access token presented.
 
@@ -62,6 +66,7 @@ Before the resource server fulfills the request, it needs to validate the access
 ### Refresh Tokens
 
 OAuth 2.0 also supports the use of refresh tokens. These tokens are issued by the authorization server and can be used by the client to obtain new access tokens. This is particularly useful for clients that need long-lived access to a resource server without forcing the resource owner to re-authenticate frequently.
+
 
 ---
 
