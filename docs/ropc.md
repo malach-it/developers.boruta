@@ -1,11 +1,10 @@
+# Resource owner password credentials
 
 :::info
 Please refer to [the authentication framework overview page](/auth-framework-overview.md) for a more general approach of how authentication works.
 :::
 
 ---
-
-## Description
 
 The Resource Owner Password Credential (ROPC) flow is one of the standard flows defined in [OAuth2](https://www.rfc-editor.org/rfc/rfc6749#section-1.3.3).
 
@@ -39,6 +38,7 @@ The primary use cases include:
 * Migration scenarios where legacy systems require an interim solution for authentication and authorization while transitioning to more secure OAuth 2.0 flows.
 * Applications operating in constrained environments where redirect-based flows are not feasible.
 
+```ascii-diagram
      +----------+
      | Resource |
      |  Owner   |
@@ -56,6 +56,7 @@ The primary use cases include:
      |         |<--(C)---- Access Token ---------<|               |
      |         |    (w/ Optional Refresh Token)   |               |
      +---------+                                  +---------------+
+```
 
     *Figure 1: Resource Owner Password Credentials Flow. Source: IETF(https://datatracker.ietf.org/doc/html/rfc6749#section-4.3)*
 
@@ -84,9 +85,33 @@ If ROPC must be used, it's imperative to secure the application using HTTPS to e
 
 ## How to integrate this flow
 
-### Step 1: Requesting Access Token
+### Prerequisites
 
-**Description** 
+* You will need to have a **created backend**
+
+To create new elements in boruta, use the top right button "create".
+
+> Learn more on how to create and configure a backend on [this page](provider-configuration/configure-backends)
+
+* You will also need to have an **identity provider**
+
+To do so, click the top right button "create" while being in the Identity provider section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an identity provider on [this page](provider-configuration/configure-identity-providers).
+
+* Finaly, you will need to have a **client**
+
+To do so, click the top right button "create" while being in the client section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an client on [this page](provider-configuration/configure-clients).
+
+---
+
+### Resource owner password credential flow
+
+#### Step A: Requesting Access Token
 
 In the ROPC flow, the client directly requests an access token from the authorization server by submitting the resource owner's credentials (username and password) along with its own client credentials.
 
@@ -101,9 +126,9 @@ In the ROPC flow, the client directly requests an access token from the authoriz
 * **Scope**: (Optional) Define the scope of the access request. This parameter specifies the level of access the client is requesting.
 Learn more about how to configure scopes on [this page](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
 
-**Result**
+**Step result**
 
-The client sends a POST request to the authorization server's token endpoint with the necessary credentials and requested scope. 
+The client sends a POST request to the authorization server's token endpoint with the necessary credentials and requested scope.
 The request format typically looks like this:
 
 ```
@@ -114,9 +139,7 @@ grant_type=password&username=<resource_owner_username>&password=<resource_owner_
 ```
 ---
 
-### Step 2: Receiving the Access Token
-
-**Description**
+#### Step B: Receiving the Access Token
 
 If the authorization server successfully authenticates the client and the resource owner, and the request is valid, it issues an access token to the client.
 
@@ -124,7 +147,7 @@ If the authorization server successfully authenticates the client and the resour
 
 * No explicit configuration by the client: The structure of the response is determined by the authorization server, based on the success of the client and resource owner authentication.
 
-**Result**
+**Step result**
 
 The authorization server responds with a JSON object containing the access token and additional information, such as the token type, expiration time, and scope. The response looks something like this:
 
@@ -139,9 +162,7 @@ The authorization server responds with a JSON object containing the access token
 ```
 ---
 
-### Step 3: Accessing Protected Resources
-
-**Description**
+#### Step C: Accessing Protected Resources
 
 With the access token, the client can now make authenticated requests to the resource server on behalf of the resource owner to access protected resources.
 
@@ -149,7 +170,7 @@ With the access token, the client can now make authenticated requests to the res
 
 * **Use of Access Token**: The client includes the access token in the Authorization header of its requests to the resource server.
 
-**Result**
+**Step result**
 
 The resource server validates the access token, and if it is valid, it processes the request. The client accesses protected resources by including the access token in the HTTP header as follows:
 

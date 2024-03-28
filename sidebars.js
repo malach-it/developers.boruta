@@ -23,7 +23,7 @@ const sidebars = {
       items: [
         'intro',
         'auth-framework-overview',
-        'ssi-overview'
+        // 'ssi-overview'
       ],
     },
     {
@@ -51,15 +51,15 @@ const sidebars = {
         'ropc',
       ],
     },
-    {
-      type: 'category',
-      label: 'Deployment',
-      collapsed: false,
-      items: [
-        'deployment/docker',
-        'deployment/standalone',
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Deployment',
+    //   collapsed: false,
+    //   items: [
+    //     'deployment/docker',
+    //     'deployment/standalone',
+    //   ],
+    // },
     // {
     //   type: 'category',
     //   label: 'Gateway',

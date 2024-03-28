@@ -1,10 +1,10 @@
+# Client credentials
 
 :::info
 Please refer to [the authentication framework overview page](/auth-framework-overview.md) for a more general approach of how authentication works.
 :::
 
 ---
-## Description
 
 The Client Credentials Grant is a server-to-server authentication mechanism defined in the [OAuth 2.0](https://www.rfc-editor.org/rfc/rfc6749#section-1.3.4) framework.
 
@@ -20,6 +20,7 @@ The key steps in the Client Credentials flow are as follows:
 * The resource server validates the access token and, if valid, serves the requested resources.
 
 
+```ascii-diagram
      +---------+                                  +---------------+
      |         |                                  |               |
      |         |>--(A)- Client Authentication --->| Authorization |
@@ -27,12 +28,13 @@ The key steps in the Client Credentials flow are as follows:
      |         |<--(B)---- Access Token ---------<|               |
      |         |                                  |               |
      +---------+                                  +---------------+
+```
 
-    *Figure 1: Client Credentials Flow. Source: [IETF](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4)*
+*Figure 1: Client Credentials Flow. Source: [IETF](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4)*
 
 This flow is straightforward and involves a single authenticated call to the authorization server, simplifying machine-to-machine communication where no user interaction is required.
 
---
+---
 
 ## Use Cases
 
@@ -67,9 +69,33 @@ Implementing TLS (Transport Layer Security) is crucial to protect the transmissi
 
 ## How to integrate this flow
 
-### Step A: Access Token Request
+### Prerequisites
 
-**Description**
+* You will need to have a **created backend**
+
+To create new elements in boruta, use the top right button "create".
+
+> Learn more on how to create and configure a backend on [this page](provider-configuration/configure-backends)
+
+* You will also need to have an **identity provider**
+
+To do so, click the top right button "create" while being in the Identity provider section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an identity provider on [this page](provider-configuration/configure-identity-providers).
+
+* Finaly, you will need to have a **client**
+
+To do so, click the top right button "create" while being in the client section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an client on [this page](provider-configuration/configure-clients).
+
+---
+
+### Client credentials flow
+
+#### Step A: Access Token Request
 
 The client requests an access token from the authorization server by authenticating with its client credentials (client ID and client secret) and specifying the desired scope for the access token. This step involves sending a POST request to the token endpoint of the authorization server.
 
@@ -82,7 +108,7 @@ The client requests an access token from the authorization server by authenticat
 * **Scope**: (Optional) Specify the scope of the access request, which defines the resources the client wants to access. Not all implementations require a scope.
 Learn more about how to configure scopes on [this page](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
 
-**Result**
+**Step result**
 
 The client constructs and sends a request for an access token to the authorization server's token endpoint. This is done using a POST request with the client credentials in the Authorization header or body, depending on the server's requirements. The request looks like this:
 
@@ -95,9 +121,7 @@ grant_type=client_credentials&scope=<scope>
 ```
 ---
 
-### Step 2: Access Token Response
-
-**Description**
+#### Step B: Access Token Response
 
 If the access token request is valid and the client is authenticated successfully, the authorization server issues an access token to the client. The response includes the access token, its type, expiration time, and optionally, the scope of the access token if it is narrower than the scope requested.
 
@@ -105,9 +129,9 @@ If the access token request is valid and the client is authenticated successfull
 
 * No explicit configuration by the client: The response structure and content are determined by the authorization server based on the successful authentication of the client and the validity of the request.
 
-**Result**
+**Step result**
 
-The authorization server responds with a JSON payload containing the access token and other relevant information. 
+The authorization server responds with a JSON payload containing the access token and other relevant information.
 The response from the server looks like this:
 
 ```json
@@ -121,18 +145,16 @@ The response from the server looks like this:
 
 ---
 
-### Step 3: Accessing Protected Resources
+#### Step C: Accessing Protected Resources
 
-**Description**
-
-With the access token, the client can make requests to the resource server to access protected resources. 
+With the access token, the client can make requests to the resource server to access protected resources.
 The access token is included in the HTTP headers of the request.
 
 **Configuration**
 
 * **Use of Access Token**: The client includes the access token in the Authorization header when making requests to the resource server.
 
-**Result**
+**Step result**
 
 The resource server validates the access token and, if valid, processes the client's request. The client accesses protected resources by including the access token in the HTTP header like so:
 

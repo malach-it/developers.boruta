@@ -1,11 +1,10 @@
+# Hybrid grant
 
 :::info
 Please refer to [the authentication framework overview page](/auth-framework-overview.md) for a more general approach of how authentication works.
 :::
 
 ---
-
-## Description
 
 The Hybrid Grant is a sophisticated flow introduced by [OpenID Connect](https://openid.net/developers/how-connect-works/), an authentication layer built on top of [the OAuth 2.0 protocol](https://www.rfc-editor.org/rfc/rfc6749#), developed by the OpenID Foundation.
 
@@ -54,9 +53,33 @@ Ensure secure handling and validation of ID tokens, including verifying the sign
 
 ## How to integrate this flow
 
-### Step 1: Authorization Request
+### Prerequisites
 
-**Description**
+* You will need to have a **created backend**
+
+To create new elements in boruta, use the top right button "create".
+
+> Learn more on how to create and configure a backend on [this page](provider-configuration/configure-backends)
+
+* You will also need to have an **identity provider**
+
+To do so, click the top right button "create" while being in the Identity provider section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an identity provider on [this page](provider-configuration/configure-identity-providers).
+
+* Finaly, you will need to have a **client**
+
+To do so, click the top right button "create" while being in the client section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an client on [this page](provider-configuration/configure-clients).
+
+---
+
+### Hybrid flow
+
+#### Step A: Authorization Request
 
 The client initiates the flow by directing the user-agent to the authorization server's authorization endpoint. This request includes parameters indicating the response types the client wishes to receive, which can be a combination of code and token (and optionally id_token in OpenID Connect).
 
@@ -75,7 +98,7 @@ Learn more about how to configure scopes on [this page](https://developers.borut
 
 **Result**
 
-The client constructs and sends an authorization request to the authorization server. 
+The client constructs and sends an authorization request to the authorization server.
 An example request might look like this:
 
 ```
@@ -84,11 +107,9 @@ GET <authorization_endpoint>?client_id=<client_id>&redirect_uri=<redirect_uri>&r
 
 ---
 
-### Step 2: Authorization Response
+#### Step B: Authorization Response
 
-**Description**
-
-If the user consents to the request, the authorization server redirects the user-agent back to the client with the requested tokens. 
+If the user consents to the request, the authorization server redirects the user-agent back to the client with the requested tokens.
 The authorization code and possibly an access token (and an ID token if requested) are included in the response.
 
 **Configuration**
@@ -100,13 +121,14 @@ The authorization code and possibly an access token (and an ID token if requeste
 The authorization server redirects the user-agent to the client's redirect URI, providing the authorization code and possibly an access token (and ID token) in the URI fragment or query, depending on the response type requested. The redirect might look like this:
 
 ```
-<redirect_uri>#code=<authorization_code>&access_token=<access_token>&state=<state>&token_type=Bearer&expires_in=3600
+302 Found
+
+Location: <redirect_uri>#code=<authorization_code>&access_token=<access_token>&state=<state>&token_type=Bearer&expires_in=3600
 ```
+
 ---
 
-### Step 3: Token Request (Optional)
-
-**Description**
+#### Step C: Token Request (Optional)
 
 If the response type included code, the client can use this authorization code to request an access token (and refresh token) from the authorization server's token endpoint. This step is performed server-to-server, enhancing security by not exposing the authorization code to the user-agent.
 
@@ -120,7 +142,7 @@ If the response type included code, the client can use this authorization code t
 
 **Result**
 
-The client sends a request to the token endpoint to exchange the authorization code for an access token (and refresh token). 
+The client sends a request to the token endpoint to exchange the authorization code for an access token (and refresh token).
 The request and response format follows the Authorization Code flow:
 
 ```
@@ -134,9 +156,7 @@ The server responds with an access token (and refresh token) in a JSON format.
 
 ---
 
-### Step 4: Accessing Protected Resources
-
-**Description**
+#### Step D: Accessing Protected Resources
 
 The client uses the access token obtained either directly from the authorization response (step 2) or from the token endpoint (step 3) to make authenticated requests to the resource server.
 

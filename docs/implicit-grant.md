@@ -1,11 +1,10 @@
+# Implicit grant
 
 :::info
 Please refer to [the authentication framework overview page](/auth-framework-overview.md) for a more general approach of how authentication works.
 :::
 
 ---
-
-## Description
 
 The Implicit Grant is tailored specifically for **client-side applications**, particularly those running in a **browser environment**, such as JavaScript applications.
 
@@ -19,6 +18,7 @@ The flow involves the following steps:
 * The client application extracts the access token from the URI fragment. Since fragments are not sent to the server but are accessible via JavaScript running in the browser, this ensures that the access token remains within the client's browser session.
 * The access token can then be used by the client application to make requests to the resource server on behalf of the user.
 
+```ascii-diagram
      +----------+
      | Resource |
      |  Owner   |
@@ -51,6 +51,7 @@ The flow involves the following steps:
      |  Client |
      |         |
      +---------+
+```
 
    Note: The lines illustrating steps (A) and (B) are broken into two
    parts as they pass through the user-agent.
@@ -91,17 +92,41 @@ Applications using the Implicit Grant should enforce strict [CORS (Cross-Origin 
 
 ## How to integrate this flow
 
-### Step A: user authorization request
+### Prerequisites
 
-**Description**
+* You will need to have a **created backend**
 
-The client initiates the flow by redirecting the user's browser to the authorization server, requesting access to the resource owner's resources. 
+To create new elements in boruta, use the top right button "create".
+
+> Learn more on how to create and configure a backend on [this page](provider-configuration/configure-backends)
+
+* You will also need to have an **identity provider**
+
+To do so, click the top right button "create" while being in the Identity provider section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an identity provider on [this page](provider-configuration/configure-identity-providers).
+
+* Finaly, you will need to have a **client**
+
+To do so, click the top right button "create" while being in the client section.
+Pick a name and choose in the list on of the backend you previously created, then click on "create".
+
+> Learn more on how to create and configure an client on [this page](provider-configuration/configure-clients).
+
+---
+
+### Implicit flow
+
+#### Step A: user authorization request
+
+The client initiates the flow by redirecting the user's browser to the authorization server, requesting access to the resource owner's resources.
 This step involves preparing a URL to the authorization endpoint with specific query parameters.
 
 **Configuration**
 
 * **Authorization Endpoint URL**: Determine the authorization server's endpoint URL where the authorization request will be sent.
-  
+
 * **Client ID**: Include the client's identifier issued by the authorization server when it was registered.
 
 * **Redirect URI**: Specify the URI to which the authorization server will send the user-agent back once access is granted or denied.
@@ -111,7 +136,7 @@ Learn more about how to configure scopes on [this page](https://developers.borut
 
 * **State**: Generate a CSRF token to mitigate cross-site request forgery attacks, ensuring the response to the request can be validated as coming from the user.
 
-**Result**
+**Step result**
 
 The user is redirected to the authorization endpoint where they can authenticate and approve the client's access request.
 The client constructs and sends a request like this:
@@ -121,9 +146,7 @@ GET <authorization_endpoint>?response_type=token&client_id=<client_id>&redirect_
 ```
 ---
 
-### Step 2: authorization response
-
-**Description**
+#### Step B: authorization response
 
 Assuming the resource owner grants access, the authorization server redirects the user-agent back to the client using the provided redirect URI.
 This redirection URI includes an access token and optionally a state parameter in its fragment.
@@ -132,7 +155,7 @@ This redirection URI includes an access token and optionally a state parameter i
 
 * **No explicit server configuration by the client**: The redirection URI and access token are generated and managed by the authorization server.
 
-**Result**
+**Step result**
 
 The user-agent is redirected to the client's specified redirect URI with the access token and state (if provided) included in the URI fragment, not the query string, to ensure that they are not sent to the web server on a subsequent request. The URL to which the user-agent is redirected would look something like this:
 
@@ -142,9 +165,7 @@ The user-agent is redirected to the client's specified redirect URI with the acc
 
 ---
 
-### Step 3: accessing protected resources
-
-**Description**
+#### Step C: accessing protected resources
 
 With the access token now in the client's possession, the client can use it to make authenticated requests to the resource server on behalf of the user.
 
@@ -152,9 +173,9 @@ With the access token now in the client's possession, the client can use it to m
 
 * **Use of Access Token**: The client includes the access token in the Authorization header of HTTP requests to the resource server.
 
-**Result**
+**Step result**
 
-The resource server validates the access token and, if valid, serves the request. 
+The resource server validates the access token and, if valid, serves the request.
 The client accesses protected resources by including the access token in the HTTP header like so:
 
 ```
