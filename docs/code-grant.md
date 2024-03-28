@@ -93,8 +93,6 @@ Applications should ensure secure transmission of all requests to the authorizat
 
 To create new elements in boruta, use the top right button "create".
 
-![The create button in boruta's interface](/static/assets/images/create.png "Create button")
-
 --> Learn more on how to create and configure a backend on [this page](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-backends)
 
 * You will also need to have an **identity provider**
@@ -108,130 +106,108 @@ Pick a name and choose in the list on of the backend you previously created, the
 
 ### Flow
 
-The steps below explain how to follow the procedure indicated in the [OAuth 2.0 spec](https://www.rfc-editor.org/rfc/rfc6749#section-4.1)for the code grant flow in boruta. You can either use the interface or [the API](https://developers.boruta.patatoid.fr/api) to perform the required actions.
-
-#### Step A
-
-* Navigate to the server's configuration page and find the authorization endpoint URL.
-It is typically the issuer's address followed by "/oauth/authorize".
-
---> <https://oauth.boruta.patatoid.fr/.well-known/openid-configuration>
-
-* Locate your client identifier in the client view section; this is your client ID.
-
-![The Client ID in boruta's interface](/static/assets/images/client-id.png "Client ID")
-
-* Determine the required scope for your application.
-
-You can determine scopes at the client, backend, and user levels.
-For a deeper understanding, please refer to [the scope creation and access documentation](/provider-configuration/configure-scopes.md).
-
-* Generate a unique, random string for the local state to ensure the originating request comes from your client.
-
-* Specify a redirection URI where the user will be sent after authentication.
-
-This must be one of the registered redirect URIs in the client view.
-
-![The redirection URI in boruta's interface](/static/assets/images/redirect-uri.png "Specify a redirection URI")
-
-* Construct your request to the authorization endpoint using the provided format.
-
-```
-GET <issuer>/oauth/authorize?client_id=<client id>&scope=<scope>&state=<state>&redirect_uri=<redirect uri>&response_type=code`
-```
-
-This process initiates the OAuth 2.0 authorization flow, guiding the user through authentication and ensuring secure access control.
-
-
----
----
----
-
-*not done yet*
+The steps below explain how to follow the procedure indicated in the [OAuth 2.0 spec](https://www.rfc-editor.org/rfc/rfc6749#section-4.1) for the code grant flow in boruta. You can either use the interface or [the API](https://developers.boruta.patatoid.fr/api) to perform the required actions.
 
 ---
 
-#### Step B.
+#### Step A: prepare the authorization request
 
-user authenticates
+**Description**
 
-- server configuration (authentication)
+This initial step involves preparing for the OAuth 2.0 authorization process by setting up the necessary parameters for the authorization request. This setup includes locating the authorization endpoint, identifying your client ID, defining the required scopes, generating a state parameter, and specifying a redirect URI.
 
-    - templates
+**Configuration**
 
-        - edit layout template
+* **Locate the Authorization Endpoint**: Start by navigating to the server's configuration page to find the authorization endpoint URL, which is usually the issuer's address followed by /oauth/authorize. An example is <https://oauth.boruta.patatoid.fr/.well-known/openid-configuration>.
 
-        - edit login template
+* **Identify Your Client ID**: Find your client identifier (client ID) in the client view section of the server's configuration. This unique ID represents your application in the OAuth flow.
 
-    - MFA with TOTP
+* **Determine Required Scopes**: Scopes define the level of access your application needs. These can be set at various levels, including the client, backend, and user levels. For more information on defining scopes, refer to the scope creation and access documentation.
 
-    - deeper understanding in identity provider page
+* **Generate a Unique State**: Create a unique, random string to serve as the state parameter. This ensures that the response to your authorization request originates from your client, preventing cross-site request forgery (CSRF) attacks.
 
-- result of the step
+* **Specify a Redirection URI**: Choose a redirection URI where the user will be directed after authentication. This URI must be pre-registered in your client configuration to be recognized as valid.
 
-    - client authenticated
+**Result**
+
+Construct the authorization request by combining all the parameters into a single URL, following the specified format. This URL initiates the OAuth 2.0 authorization flow, leading the user through the authentication process and towards secure access control. 
+
+The request format looks like this:
+
+```
+GET <issuer>/oauth/authorize?client_id=<client_id>&scope=<scope>&state=<state>&redirect_uri=<redirect_uri>&response_type=code
+```
 
 ---
 
-#### Step C.
+#### Step B: authenticate user
 
-Callback to the client application through the user-agent of the resource owner
+**Description**
 
-- server configuration
+This step involves authenticating the user through the server. It requires configuring the server to authenticate users effectively, using customized templates and implementing Multi-Factor Authentication (MFA) with TOTP for enhanced security. This requires a deep understanding of the identity provider's settings.
 
-    - none
+**Configuration**
 
-- explanations
+* **Server Configuration for Authentication**: Customize the layout and login templates to fit the application's user experience.
 
-    - authorization code
+* **Implement MFA with TOTP**: Add an extra layer of security by enabling Multi-Factor Authentication using Time-Based One-Time Passwords.
 
-        - code that helps the client to get an access token at authorizarion code phace (D)
+* **Identity Provider Settings**: Gain a thorough understanding of the identity provider page to configure authentication settings appropriately.
 
-    - local state
+**Result**
 
-        - should be the same string as in (A) to ensure the origin of the request
+The client is authenticated, allowing the authentication flow to proceed to the next step.
 
-- result
+---
+
+#### Step C: obtain authorization code
+
+**Description**
+
+After user authentication, the server issues a callback to the client application through the resource owner's user-agent. This step involves no server configuration but requires understanding the authorization code and local state to ensure the request's origin is verified.
+
+**Configuration**
+
+* **Server Configuration**: None required for this step.
+
+* **Understanding Authorization Code and Local State**: The authorization code is needed to obtain an access token in the next phase. The local state should match the initial request to verify the request's origin.
+
+**Result**
+
+The user-agent is redirected with a 302 status to the client application, appending the authorization code and state to the redirect URI. 
+The process is as follows:
+
+* The user-agent, typically a web browser, receives the redirect and provides the authorization code to the client application.
+* The client application then uses this code to request an access token from the authorization server. This is done by sending a POST request to the issuer's /oauth/token endpoint with the code, client ID, redirect URI, and grant type specified as authorization_code.
+
+The HTTP request made by the client looks like this:
 
 ```
-
-302 redirected
-
-<redirect uri>?code=<authorization code>&state=<state>
-
-```
-
-1. the user-agent provides the code to the client application
-
-2. the client requests an access token
-
-```
-
 POST <issuer>/oauth/token
+Content-Type: application/x-www-form-urlencoded
 
-code=<code>&client_id=<client id>&redirect_uri=<redirect uri>&grant_type=authorization_code
-
+code=<authorization_code>&client_id=<client_id>&redirect_uri=<redirect_uri>&grant_type=authorization_code
 ```
+
+This marks the transition from obtaining the authorization code to requesting the access token.
+
 ---
 
-#### Step D.
+#### Step D: access token request
 
-The client requests the access token
+**Description**
+The client uses the authorization code to request an access token. 
+This involves server configuration for client authentication and validating the authorization code.
 
-- server configuration
+**Configuration**
 
-    - client authentication
+* **Client Authentication Configuration**: Configure the server to authenticate the client, including setting up forms for client authentication and linking to resources for further information.
 
-        - client form "Client authentication" part
+* **Authorization Code Validation**: Ensure the authorization code is validated correctly, including checking the code's time-to-live (TTL).
 
-        - link to the client resource @pascal write a client authentication section in it
+**Result**
 
-    - validates the authorization code
-
-        - code TTL in client form
-
-
-The request will return a code 200 like so:
+The server responds with a 200 OK status, providing the access token, token type, expiry time, and refresh token in JSON format. This access token is essential for accessing protected resources.
 
 ```json
 200 OK
@@ -250,4 +226,3 @@ Content-Type: application/json
 
 }
 ```
-
