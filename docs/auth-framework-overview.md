@@ -42,31 +42,26 @@ The OAuth 2.0 relies on key roles:
 
 ---
 
-## OAuth 2.0 Authorization flow
+## OAuth 2.0 Authorization framework
 
 <div class="centered"><img src="/assets/images/authz-global.png" alt="OAuth 2.0 authentication framework overview" /></div>
 
-### 1. Authorization Grant
+> TODO refactor the flow description
+
+### 1. Access Token Issuance
 
 The process begins with the client requesting authorization from the resource owner.
 This request can happen in various ways, depending on the type of authorization grant the client uses—such as an [authorization code](/code-grant.md), [implicit grant](/implicit-grant.md), [resource owner credentials](/ropc.md), or a [client credentials grant](/client-credentials.md).
 
-### 2. Access Token Issuance
-
 Once the authorization server validates the resource owner's credentials and the client's authorization request, it issues an access token. This token is a string that represents the authorization granted to the client. The token includes information about the scope of access granted and the duration of the token's validity.
 
-### 3. Resource Access
+### 2. Resource Access
 
 The client presents the access token to the resource server when making requests for the protected resources. The access token acts like a key that unlocks access. However, it is restricted based on the permissions granted by the resource owner.
 
-### 4. Access Token Validation
+### 3. Access Token Validation
 
-Before the resource server fulfills the request, it needs to validate the access token with the authorization server. This validation ensures that the token is valid, has not expired, and grants permission for the requested action.
-
-### Refresh Tokens
-
-OAuth 2.0 also supports the use of refresh tokens. These tokens are issued by the authorization server and can be used by the client to obtain new access tokens. This is particularly useful for clients that need long-lived access to a resource server without forcing the resource owner to re-authenticate frequently.
-
+Before the resource server fulfills the request, it needs to validate the access token with the authorization server. This validation ensures that the token is valid, has not expired, and if permissions are sufficient to request the resource.
 
 ---
 
