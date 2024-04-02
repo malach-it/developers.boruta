@@ -1,13 +1,6 @@
 
 - hosts: localhost
   tasks:
-    - name: Create a k8s namespace
-      kubernetes.core.k8s:
-        api_version: v1
-        name: boruta-developers
-        kind: Namespace
-        state: present
-
     - name: Create developers.boruta Service
       kubernetes.core.k8s:
         state: present
@@ -16,7 +9,7 @@
           kind: Service
           metadata:
             name: boruta-developers-web
-            namespace: boruta-developers
+            namespace: malach-it
             labels:
               app: boruta-developers
           spec:
@@ -36,7 +29,7 @@
           kind: Issuer
           metadata:
             name: letsencrypt-production
-            namespace: boruta-developers
+            namespace: malach-it
           spec:
             acme:
               email: io.pascal.knoth@gmail.com
@@ -49,7 +42,7 @@
                     class: nginx
                 selector:
                   dnsZones:
-                  - 'developers.boruta.patatoid.fr'
+                  - 'boruta-developers.malach.it'
 
     - name: Create developers.boruta Ingress
       kubernetes.core.k8s:
@@ -59,14 +52,14 @@
           kind: Ingress
           metadata:
             name: main-ingress
-            namespace: boruta-developers
+            namespace: malach-it
             annotations:
               cert-manager.io/issuer: letsencrypt-production
               kubernetes.io/ingress.class: "nginx"
             #   nginx.ingress.kubernetes.io/rewrite-target: /
           spec:
             rules:
-            - host: developers.boruta.patatoid.fr
+            - host: boruta-developers.malach.it
               http:
                 paths:
                 - path: /
@@ -78,7 +71,7 @@
                         number: 80
             tls:
               - hosts:
-                - developers.boruta.patatoid.fr
+                - boruta-developers.malach.it
                 secretName: boruta-developers-cert
 
     - name: Create developers.boruta deployment
@@ -89,7 +82,7 @@
           kind: Deployment
           metadata:
             name: boruta-developers
-            namespace: boruta-developers
+            namespace: malach-it
           spec:
             replicas: 2
             selector:
