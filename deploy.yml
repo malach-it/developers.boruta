@@ -51,7 +51,7 @@
           apiVersion: networking.k8s.io/v1
           kind: Ingress
           metadata:
-            name: main-ingress
+            name: developers-ingress
             namespace: malach-it
             annotations:
               cert-manager.io/issuer: letsencrypt-production

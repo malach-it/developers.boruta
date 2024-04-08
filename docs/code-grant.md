@@ -93,15 +93,7 @@ Applications should ensure secure transmission of all requests to the authorizat
 
 To create new elements in boruta, use the top right button "create".
 
-<<<<<<< HEAD
-<<<<<<< HEAD
---> Learn more on how to create and configure a backend on [this page](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-backends)
-=======
---> Learn more on how to create and configure a backend on [this page](provider-configuration/configure-backends)
->>>>>>> 863ec0f (documentation review)
-=======
 > Learn more on how to create and configure a backend on [this page](provider-configuration/configure-backends)
->>>>>>> cd4e669 (documentation review)
 
 * You will also need to have an **identity provider**
 
@@ -122,49 +114,8 @@ Pick a name and choose in the list on of the backend you previously created, the
 ### Authorization code flow
 
 The steps below explain how to follow the procedure indicated in the [OAuth 2.0 spec](https://www.rfc-editor.org/rfc/rfc6749#section-4.1) for the code grant flow in boruta. You can either use the interface or [the API](https://developers.boruta.patatoid.fr/api) to perform the required actions.
-<<<<<<< HEAD
-=======
-The steps below explain how to follow the procedure indicated in the [OAuth 2.0 spec](https://www.rfc-editor.org/rfc/rfc6749#section-4.1)for the code grant flow in boruta. You can either use the interface or [the API](https://developers.boruta.patatoid.fr/api) to perform the required actions.
-
-#### Step A
-
-* Navigate to the server's configuration page and find the authorization endpoint URL.
-It is typically the issuer's address followed by "/oauth/authorize".
-
---> <https://oauth.boruta.patatoid.fr/.well-known/openid-configuration>
-
-* Locate your client identifier in the client view section; this is your client ID.
-
-* Determine the required scope for your application.
-
-You can determine scopes at the client, backend, and user levels.
-For a deeper understanding, please refer to [the scope creation and access documentation](provider-configuration/configure-scopes.md).
-
-* Generate a unique, random string for the local state to ensure the originating request comes from your client.
-
-* Specify a redirection URI where the user will be sent after authentication.
-
-This must be one of the registered redirect URIs in the client view.
-
-* Construct your request to the authorization endpoint using the provided format.
-
-```
-GET <issuer>/oauth/authorize?client_id=<client id>&scope=<scope>&state=<state>&redirect_uri=<redirect uri>&response_type=code`
-```
-
-This process initiates the OAuth 2.0 authorization flow, guiding the user through authentication and ensuring secure access control.
-
 
 ---
----
----
-
-*not done yet*
->>>>>>> 863ec0f (documentation review)
-
----
-=======
->>>>>>> cd4e669 (documentation review)
 
 #### Step A: prepare the authorization request
 
