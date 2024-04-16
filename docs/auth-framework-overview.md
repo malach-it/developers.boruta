@@ -46,27 +46,17 @@ The OAuth 2.0 relies on key roles:
 
 <div class="centered"><img src="/assets/images/authz-global.png" alt="OAuth 2.0 authentication framework overview" /></div>
 
-> TODO refactor the flow description
+The Oauth 2.0 Authorization framework defines a three legged architecture to provide a secure way for the clients to obtain credentials targeting to access resources located on an HTTP service. All the flows described can be split in three major steps implementing better security for the web applications.
 
 ### 1. Access Token Issuance
 
-The process begins with the client requesting authorization from the resource owner.
-This request can happen in various ways, depending on the type of authorization grant the client uses—such as an [authorization code](/code-grant.md), [implicit grant](/implicit-grant.md), [resource owner credentials](/ropc.md), or a [client credentials grant](/client-credentials.md).
-
-Once the authorization server validates the resource owner's credentials and the client's authorization request, it issues an access token. This token is a string that represents the authorization granted to the client. The token includes information about the scope of access granted and the duration of the token's validity.
+Here, the client representing a resource owner or the service itself can obtain an Access Token (AT) that defines its ability to access resources, often hosted on an API. This process is based on credential presentation in order to identify the person or the machine. It permits to the Authorization Server (AS) to give according capabilities using the information stored in a registry, the identity provider.
 
 ### 2. Resource Access
 
-The client presents the access token to the resource server when making requests for the protected resources. The access token acts like a key that unlocks access. However, it is restricted based on the permissions granted by the resource owner.
+The client presents the already obtained Access Token to the Resource Server (RS) while performing requests to access protected resources. The Access Token acts like a key that contains access information.
 
 ### 3. Access Token Validation
 
-Before the resource server fulfills the request, it needs to validate the access token with the authorization server. This validation ensures that the token is valid, has not expired, and if permissions are sufficient to request the resource.
+To respond to the client request, the HTTP service needs to validate the Access Token to apply the restriction it made on its protected resources. This validation is performed on three levels: ensuring token validity, checking the permissions to request the resource at a feature level but also on data level applying role and/or attribute based access control.
 
----
-
-## Considerations for Security
-
-OAuth 2.0 relies on **secure transmission of access tokens and other sensitive information over HTTPS**.
-
-The framework itself is built on trust: the resource owner trusts the authorization server to authenticate their identity securely, and the client and resource server trusts the authorization server to issue valid tokens.
