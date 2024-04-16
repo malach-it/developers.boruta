@@ -95,18 +95,26 @@ Pick a name and choose in the list on of the backend you previously created, the
 
 ### Client credentials flow
 
-#### Step A: Access Token Request
+#### Step A: access token request
 
 The client requests an access token from the authorization server by authenticating with its client credentials (client ID and client secret) and specifying the desired scope for the access token. This step involves sending a POST request to the token endpoint of the authorization server.
 
 **Configuration**
 
 * **Token Endpoint URL**: Identify the URL of the authorization server's token endpoint where the client will send its request.
+:::note Integration
+Find out token endpoint URL on openid configuration `/.well-known/openid-configuration`, `/oauth/token` by default
+:::
 
 * **Client Credentials**: The client ID and client secret provided by the authorization server when the client was registered. These credentials authenticate the client to the server.
+:::note Integration
+Find out the required client information on [client configuration pages](provider-configuration/configure-clients#configuration)
+:::
 
 * **Scope**: (Optional) Specify the scope of the access request, which defines the resources the client wants to access. Not all implementations require a scope.
-Learn more about how to configure scopes on [this page](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
+:::note Integration
+Learn more about how to [configure scopes](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
+:::
 
 **Step result**
 
@@ -121,7 +129,7 @@ grant_type=client_credentials&scope=<scope>
 ```
 ---
 
-#### Step B: Access Token Response
+#### Step B: access token response
 
 If the access token request is valid and the client is authenticated successfully, the authorization server issues an access token to the client. The response includes the access token, its type, expiration time, and optionally, the scope of the access token if it is narrower than the scope requested.
 
@@ -145,7 +153,7 @@ The response from the server looks like this:
 
 ---
 
-#### Step C: Accessing Protected Resources
+#### Step C: accessing protected resources
 
 With the access token, the client can make requests to the resource server to access protected resources.
 The access token is included in the HTTP headers of the request.
@@ -153,6 +161,9 @@ The access token is included in the HTTP headers of the request.
 **Configuration**
 
 * **Use of Access Token**: The client includes the access token in the Authorization header when making requests to the resource server.
+:::note Integration
+The server exposes an introspect endpoint `/oauth/introspect` that allows to provide token information, notably its validity
+:::
 
 **Step result**
 

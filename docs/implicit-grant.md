@@ -126,13 +126,25 @@ This step involves preparing a URL to the authorization endpoint with specific q
 **Configuration**
 
 * **Authorization Endpoint URL**: Determine the authorization server's endpoint URL where the authorization request will be sent.
+:::note Integration
+Find out authorization endpoint URL on openid configuration `/.well-known/openid-configuration`, `/oauth/authorize` by default
+:::
 
 * **Client ID**: Include the client's identifier issued by the authorization server when it was registered.
+:::note Integration
+Find out the required client information on [client configuration pages](provider-configuration/configure-clients#configuration)
+:::
 
 * **Redirect URI**: Specify the URI to which the authorization server will send the user-agent back once access is granted or denied.
+:::note Integration
+Find out the required client information on [client configuration pages](provider-configuration/configure-clients#configuration)
+:::
 
 * **Scope**: Define the scope of the access request, which specifies the resources that the application intends to access.
 Learn more about how to configure scopes on [this page](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
+:::note Integration
+Learn more about how to [configure scopes](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
+:::
 
 * **State**: Generate a CSRF token to mitigate cross-site request forgery attacks, ensuring the response to the request can be validated as coming from the user.
 
@@ -172,6 +184,9 @@ With the access token now in the client's possession, the client can use it to m
 **Configuration**
 
 * **Use of Access Token**: The client includes the access token in the Authorization header of HTTP requests to the resource server.
+:::note Integration
+The server exposes an introspect endpoint `/oauth/introspect` that allows to provide token information, notably its validity
+:::
 
 **Step result**
 

@@ -123,15 +123,27 @@ This initial step involves preparing for the OAuth 2.0 authorization process by 
 
 **Configuration**
 
-* **Locate the Authorization Endpoint**: Start by navigating to the server's configuration page to find the authorization endpoint URL, which is usually the issuer's address followed by /oauth/authorize. An example is <https://oauth.boruta.patatoid.fr/.well-known/openid-configuration>.
+* **Authorization Endpoint URL**: Start by navigating to the server's configuration page to find the authorization endpoint URL, which is usually the issuer's address followed by /oauth/authorize. An example is <https://oauth.boruta.patatoid.fr/.well-known/openid-configuration>.
+:::note Integration
+Find out authorization endpoint URL on openid configuration `/.well-known/openid-configuration`, `/oauth/authorize` by default
+:::
 
-* **Identify Your Client ID**: Find your client identifier (client ID) in the client view section of the server's configuration. This unique ID represents your application in the OAuth flow.
+* **Client ID**: Find your client identifier (client ID) in the client view section of the server's configuration. This unique ID represents your application in the OAuth flow.
+:::note Integration
+Find out the required client information on [client configuration pages](provider-configuration/configure-clients#configuration)
+:::
 
-* **Determine Required Scopes**: Scopes define the level of access your application needs. These can be set at various levels, including the client, backend, and user levels. For more information on defining scopes, refer to the scope creation and access documentation.
+* **Scope**: Scopes define the level of access your application needs. These can be set at various levels, including the client, backend, and user levels. For more information on defining scopes, refer to the scope creation and access documentation.
+:::note Integration
+Learn more about how to [configure scopes](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
+:::
 
-* **Generate a Unique State**: Create a unique, random string to serve as the state parameter. This ensures that the response to your authorization request originates from your client, preventing cross-site request forgery (CSRF) attacks.
+* **State**: Create a unique, random string to serve as the state parameter. This ensures that the response to your authorization request originates from your client, preventing cross-site request forgery (CSRF) attacks.
 
-* **Specify a Redirection URI**: Choose a redirection URI where the user will be directed after authentication. This URI must be pre-registered in your client configuration to be recognized as valid.
+* **Redirect URI**: Choose a redirection URI where the user will be directed after authentication. This URI must be pre-registered in your client configuration to be recognized as valid.
+:::note Integration
+Find out the required client information on [client configuration pages](provider-configuration/configure-clients#configuration)
+:::
 
 **Step result**
 
@@ -151,11 +163,13 @@ This step involves authenticating the user through the server. It requires confi
 
 **Configuration**
 
+:::note Integration
+Manage authentication features and templates through the [identity provider configuration](provider-configuration/configure-identity-providers)
+:::
+
 * **Server Configuration for Authentication**: Customize the layout and login templates to fit the application's user experience.
 
 * **Implement MFA with TOTP**: Add an extra layer of security by enabling Multi-Factor Authentication using Time-Based One-Time Passwords.
-
-* **Identity Provider Settings**: Gain a thorough understanding of the identity provider page to configure authentication settings appropriately.
 
 **Step result**
 
@@ -175,9 +189,7 @@ After user authentication, the server issues a callback to the client applicatio
 
 **Configuration**
 
-* **Server Configuration**: None required for this step.
-
-* **Understanding Authorization Code and Local State**: The authorization code is needed to obtain an access token in the next phase. The local state should match the initial request to verify the request's origin.
+* **Authorization Code and Local State**: The authorization code is needed to obtain an access token in the next phase. The local state should match the initial request to verify the request's origin.
 
 **Step result**
 
@@ -207,7 +219,10 @@ This involves server configuration for client authentication and validating the 
 
 **Configuration**
 
-* **Client Authentication Configuration**: Configure the server to authenticate the client, including setting up forms for client authentication and linking to resources for further information.
+* **Token Endpoint URL**: Identify the URL of the authorization server's token endpoint where the access token request will be sent.
+:::note Integration
+Find out token endpoint URL on openid configuration `/.well-known/openid-configuration`, `/oauth/token` by default
+:::
 
 * **Authorization Code Validation**: Ensure the authorization code is validated correctly, including checking the code's time-to-live (TTL).
 
@@ -221,14 +236,9 @@ The server responds with a 200 OK status, providing the access token, token type
 Content-Type: application/json
 
 {
-
     "access_token": <AT>,
-
     "token_type": "bearer",
-
     "expires_in": 3600,
-
     "refresh_token": <RT>
-
 }
 ```

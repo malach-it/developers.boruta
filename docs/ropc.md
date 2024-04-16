@@ -58,7 +58,7 @@ The primary use cases include:
      +---------+                                  +---------------+
 ```
 
-    *Figure 1: Resource Owner Password Credentials Flow. Source: IETF(https://datatracker.ietf.org/doc/html/rfc6749#section-4.3)*
+*Figure 1: Resource Owner Password Credentials Flow. Source: IETF(https://datatracker.ietf.org/doc/html/rfc6749#section-4.3)*
 
 ---
 
@@ -118,13 +118,21 @@ In the ROPC flow, the client directly requests an access token from the authoriz
 **Configuration**
 
 * **Token Endpoint URL**: Identify the URL of the authorization server's token endpoint where the access token request will be sent.
+:::note Integration
+Find out token endpoint URL on openid configuration `/.well-known/openid-configuration`, `/oauth/token` by default
+:::
 
 * **Resource Owner Credentials**: The username and password of the resource owner. These credentials must be handled with care to avoid security risks.
 
 * **Client Credentials**: The client ID and, optionally, the client secret, if required by the authorization server for client authentication.
+:::note Integration
+Find out the required client information on [client configuration pages](provider-configuration/configure-clients#configuration)
+:::
 
 * **Scope**: (Optional) Define the scope of the access request. This parameter specifies the level of access the client is requesting.
-Learn more about how to configure scopes on [this page](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
+:::note Integration
+Learn more about how to [configure scopes](https://developers.boruta.patatoid.fr/docs/provider-configuration/configure-scopes).
+:::
 
 **Step result**
 
@@ -152,7 +160,6 @@ If the authorization server successfully authenticates the client and the resour
 The authorization server responds with a JSON object containing the access token and additional information, such as the token type, expiration time, and scope. The response looks something like this:
 
 ```json
-
 {
   "access_token": "<access_token>",
   "token_type": "Bearer",
@@ -169,6 +176,9 @@ With the access token, the client can now make authenticated requests to the res
 **Configuration**
 
 * **Use of Access Token**: The client includes the access token in the Authorization header of its requests to the resource server.
+:::note Integration
+The server exposes an introspect endpoint `/oauth/introspect` that allows to provide token information, notably its validity
+:::
 
 **Step result**
 
