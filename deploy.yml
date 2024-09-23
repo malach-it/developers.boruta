@@ -1,6 +1,13 @@
 
 - hosts: localhost
   tasks:
+    - name: Create a k8s namespace
+      kubernetes.core.k8s:
+        api_version: v1
+        name: boruta-developers
+        kind: Namespace
+        state: present
+
     - name: Create developers.boruta Service
       kubernetes.core.k8s:
         state: present
@@ -9,7 +16,7 @@
           kind: Service
           metadata:
             name: boruta-developers-web
-            namespace: malach-it
+            namespace: boruta-developers
             labels:
               app: boruta-developers
           spec:
@@ -29,7 +36,7 @@
           kind: Issuer
           metadata:
             name: letsencrypt-production
-            namespace: malach-it
+            namespace: boruta-developers
           spec:
             acme:
               email: io.pascal.knoth@gmail.com
@@ -42,7 +49,7 @@
                     class: nginx
                 selector:
                   dnsZones:
-                  - 'boruta-developers.malach.it'
+                  - 'developers.boruta.patatoid.fr'
 
     - name: Create developers.boruta Ingress
       kubernetes.core.k8s:
@@ -51,15 +58,15 @@
           apiVersion: networking.k8s.io/v1
           kind: Ingress
           metadata:
-            name: developers-ingress
-            namespace: malach-it
+            name: main-ingress
+            namespace: boruta-developers
             annotations:
               cert-manager.io/issuer: letsencrypt-production
               kubernetes.io/ingress.class: "nginx"
             #   nginx.ingress.kubernetes.io/rewrite-target: /
           spec:
             rules:
-            - host: boruta-developers.malach.it
+            - host: developers.boruta.patatoid.fr
               http:
                 paths:
                 - path: /
@@ -71,7 +78,7 @@
                         number: 80
             tls:
               - hosts:
-                - boruta-developers.malach.it
+                - developers.boruta.patatoid.fr
                 secretName: boruta-developers-cert
 
     - name: Create developers.boruta deployment
@@ -82,7 +89,7 @@
           kind: Deployment
           metadata:
             name: boruta-developers
-            namespace: malach-it
+            namespace: boruta-developers
           spec:
             replicas: 2
             selector:
