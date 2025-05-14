@@ -21,12 +21,40 @@ const sidebars = {
       link: {type: 'doc', id: 'intro'},
       items: [],
     },
+    'quickstart',
     {
       type: 'category',
       label: 'Provider configuration',
       collapsed: false,
       items: [
-        'provider-configuration/configure-clients',
+        {
+          type: 'category',
+          label: 'Clients configuration',
+          link: { type: 'doc', id: 'provider-configuration/configure-clients' },
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'provider-configuration/clients/general-configuration',
+              label: 'General configuration'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/clients/authentication',
+              label: 'Authentication'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/clients/security',
+              label: 'Security'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/clients/grant-types',
+              label: 'Grant types'
+            },
+          ],
+        },
         'provider-configuration/configure-identity-providers',
         'provider-configuration/configure-backends',
         'provider-configuration/configure-scopes',
