@@ -6,17 +6,18 @@ boruta aims to __provide organizations tools to manage their users digital ident
 
 </div>
 
+
 ## What is boruta?
 
 Boruta is an __OAuth 2.0 and satellites specifications authorization server implementation__. As an __Identity and Access Management solution__, it helps centralize authorization and identity related issues within your infrastructures. boruta stands as a server that help for the users to authenticate and to expose and apply access rules for your HTTP services (APIs) enabling better security.
 
+---
+
+<iframe src="https://www.loom.com/embed/7c3c10ad219c45238c92bab19c6da6bd?sid=030ed6aa-00ea-4d5f-ab56-7836e6ee662c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+---
+
 boruta is composed of an __authorization server__, an __administration interface__, an __identity provider__ and an experimental __gateway__ for gathering all API security related needs for a serivce composed of one or more backends. It enables to have Single Sign On and identity federation capabilities following the OAuth 2.0 framework.
-
-<div class="vision">
-
-__ENABLING ORGANIZATIONS THEN USERS TO MANAGE DIGITAL IDENTITIES WHERE DATA PROTECTION IMPROVE SYSTEMS SECURITY__
-
-</div>
 
 <div class="centered"><img src="/assets/images/components.png" /></div>
 
@@ -32,13 +33,15 @@ This server has been __designed for scalability__, the firsts load tests were pe
 
 With an implementation of __OpenID 4 Verifiable Credentials Issuance__ (OID4VCI) and __OpenID 4 Verifiable presentations__ (OID4VP), boruta provides means to be __compliant with the eIDAS 2.0 regulation__. On top of those protocols, it brings ways to get identities from a data source still being secure and with __low integration costs__, being part of your infrastructure by addition, not replacement. Indeed, boruta can leverage identity federation to restrict access to verifiable credentials making it a __secure and privacy preserving solution__.
 
+![Tripartite authorization](/assets/images/authorization-tripartite.png)
+
 ## About an identity provider
 
 boruta comes up with an __integrated idenity provider__, it can both __store the users' credentials__ internaly and connect to a __LDAP compliant__ server (Active Directory is). It helps more than enable password authentication abilities, to __enhance users__ with features like having __custom attributes__, __enforce email confirmation__, or __consent__ to the client's requested scopes.
 
 ## About a gateway
 
-boruta is __coupled to a gateway__ that acts as a __reverse-proxy__ sitting between your frontends and backends in order to __apply security rules__ in a fast and non-intrusive way. To perform those access restrictions, the gateway is based on boruta-provided access tokens and according granted scopes to mitigate the traffic and allows to get access to OpenID profile attributes in a secure way.
+boruta is __coupled to a Work In Progress gateway__ that acts as a __reverse-proxy__ sitting between your frontends and backends in order to __apply security rules__ in a fast and non-intrusive way. To perform those access restrictions, the gateway is based on boruta-provided access tokens and according granted scopes to mitigate the traffic and allows to get access to OpenID profile attributes in a secure way.
 
 ![Gateway authorization flow](/assets/images/authorization-gateway-en.png)
 
@@ -70,7 +73,6 @@ This server has also been certified against the [European Blockchain Service Inf
 ![EBSI certified - issue](/assets/images/ebsi-certification-issuance.png)
 ![EBSI certified - verify](/assets/images/ebsi-certification-verify.png)
 ![OpenID certified](/assets/images/oid-certification-mark.png)
-
 
 ## Navigation
 
