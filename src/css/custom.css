@@ -81,6 +81,11 @@ blockquote {
   border-radius: 5px;
 }
 
+iframe {
+  width: 100%;
+  height: 550px;
+}
+
 .vision {
   text-align: center;
 }
