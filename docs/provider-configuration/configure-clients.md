@@ -4,7 +4,7 @@ Clients represent the applications that need to __get authorized access__ to a r
 
 ## Architecture
 
-Each client is associated with an identity provider that helps to customize the authentication and user management features and pages. The later is connected to a backend to have access to user information.
+For __each client__ you can configure a specific __identity provider__, that will be associated to a __backend__, helping to __provide both authorization and authentication__ for them. This way, each client will have a custom interface as mean of authentication for the end-users.
 
 ![Clients, identity providers, and backends](/assets/images/client-identity-provider-backend-en.png)
 
@@ -25,3 +25,10 @@ All client operations are accessible through a REST API following the below desc
 > Have a look at [How to get restricted access](management-api#get-an-access-token)
 
 > Have a look at the [API documentation](/api/list-clients)
+
+## Navigation
+
+1. Top level configuration - [General configuration](provider-configuration/clients/general-configuration.md)
+2. Client and end-user authentication - [Authentication](provider-configuration/clients/authentication.md)
+3. Securing the flows - [Security](provider-configuration/clients/security.md)
+4. Restricting the flows - [Grant types](provider-configuration/clients/grant-types.md)

@@ -55,11 +55,63 @@ const sidebars = {
             },
           ],
         },
-        'provider-configuration/configure-identity-providers',
-        'provider-configuration/configure-backends',
+        {
+          type: 'category',
+          label: 'Identity providers configuration',
+          link: { type: 'doc', id: 'provider-configuration/configure-identity-providers' },
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'provider-configuration/identity-providers/general-configuration',
+              label: 'General configuration'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/identity-providers/features',
+              label: 'Features'
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Backends configuration',
+          link: { type: 'doc', id: 'provider-configuration/configure-backends' },
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'provider-configuration/backends/email-configuration',
+              label: 'Email configuration'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/backends/identity-federation',
+              label: 'Identity federation'
+            },
+          ],
+        },
         'provider-configuration/configure-scopes',
-        'provider-configuration/configure-upstreams',
+        {
+          type: 'category',
+          label: 'Global configuration',
+          link: { type: 'doc', id: 'provider-configuration/configure-server' },
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'provider-configuration/configuration/error-templates',
+              label: 'Error templates'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/configuration/configuration-files',
+              label: 'Configuration files'
+            },
+          ],
+        },
         'provider-configuration/management-api',
+        'provider-configuration/configure-upstreams',
       ],
     },
     {

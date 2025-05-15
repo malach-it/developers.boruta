@@ -1,4 +1,4 @@
-# Clients configuration
+# Clients configuration | General configuration
 
 Client attributes help __manage the authorization capabilities for OAuth 2.0 and satellites flows__. They provide a high level of customization helping the server to be integrated within infrastructures seamlessly. Those configuration help the flows to be both business and technically adapted for the addressed use case.
 

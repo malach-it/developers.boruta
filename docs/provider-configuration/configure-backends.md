@@ -4,7 +4,7 @@ Backends act as __user registries__ storing user related information for a bette
 
 ## Architecture
 
-Each identity provider is associated with a backend that helps to get user information for their authentication and identity management.
+For __each client__ you can configure a specific __identity provider__, that will be associated to a __backend__, helping to __provide both authorization and authentication__ for them. This way, each client will have a custom interface as mean of authentication for the end-users.
 
 ![Clients, identity providers, and backends](/assets/images/client-identity-provider-backend-en.png)
 
