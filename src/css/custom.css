@@ -81,7 +81,11 @@ blockquote {
   border-radius: 5px;
 }
 
-.parameters strong {
+.vision {
+  text-align: center;
+}
+
+.parameters strong, .vision strong {
   font-size: 1.1em;
   color: var(--ifm-color-primary) !important;
 }

@@ -1,10 +1,22 @@
 # boruta identity platform documentation
 
+<div class="vision">
+
+boruta aims to __provide organizations tools to manage their users digital identities__ for them to provide better services. From identity federation to decentralized identity, it also aims __to be end-user centric__ enabling confidentiality using the services and giving them privacy within their interactions. Those are made __to build better and secure software__ for both the organizations that build them and the end-users that use their services.
+
+</div>
+
 ## What is boruta?
 
-Boruta is an __OAuth 2.0 and OpenID Connect authorization provider__. As an __Identity and Access Management solution__, it helps centralize authorization and identity related issues within your infrastructures. boruta stands as a server that help for the users to authenticate and to expose and apply access rules for your HTTP services (APIs) enabling better security.
+Boruta is an __OAuth 2.0 and satellites specifications authorization server implementation__. As an __Identity and Access Management solution__, it helps centralize authorization and identity related issues within your infrastructures. boruta stands as a server that help for the users to authenticate and to expose and apply access rules for your HTTP services (APIs) enabling better security.
 
 boruta is composed of an __authorization server__, an __administration interface__, an __identity provider__ and an experimental __gateway__ for gathering all API security related needs for a serivce composed of one or more backends. It enables to have Single Sign On and identity federation capabilities following the OAuth 2.0 framework.
+
+<div class="vision">
+
+__ENABLING ORGANIZATIONS THEN USERS TO MANAGE DIGITAL IDENTITIES WHERE DATA PROTECTION IMPROVE SYSTEMS SECURITY__
+
+</div>
 
 <div class="centered"><img src="/assets/images/components.png" /></div>
 
