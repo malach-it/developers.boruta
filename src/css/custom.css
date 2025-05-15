@@ -16,6 +16,7 @@
   --ifm-code-font-size: 95%;
   --ifm-font-size-base: 90%;
   --ifm-container-width: 1200px;
+  --ifm-leading: 0.9rem;
   --ifm-blockquote-border-color: var(--ifm-color-gray-500);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
@@ -36,8 +37,36 @@
   text-align: center;
 }
 
+h1 {
+  font-size: 2.2rem;
+  text-align: right;
+  padding: 0.5em 0;
+  margin-bottom: 1.5em !important;
+  border-bottom: 1px solid var(--ifm-color-gray-300);
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
 li {
-  line-height: 1.2em;
+  line-height: 1.3em;
+}
+
+li p {
+  margin: 0 !important;
 }
 
 img {
@@ -52,8 +81,23 @@ blockquote {
   border-radius: 5px;
 }
 
-blockquote strong {
+.parameters strong {
   font-size: 1.1em;
+  color: var(--ifm-color-primary) !important;
+}
+
+.parameters>p {
+  position: relative;
+}
+
+.parameters>p:before {
+  content: '→';
+  font-weight: bold;
+  position: absolute;
+  font-size: 1.5em;
+  left: -1em;
+  top: -0.29em;
+  color: var(--ifm-color-primary);
 }
 
 [data-theme='dark'] blockquote {
