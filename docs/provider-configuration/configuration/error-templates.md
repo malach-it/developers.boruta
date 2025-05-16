@@ -1,3 +1,0 @@
-# Global configuration
-
-## Error templates
