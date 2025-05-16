@@ -72,9 +72,9 @@ As configuration, identity provider __features can be toggled__ to be activated 
 
 ## Manage through User Interface
 
-The administration interface gives the ability to create, update and delete identity providers. You can access them by navigating to the "Identity providers" section in the sidebar menu.
+The administration interface gives the ability to create, update and delete identity providers. You can access them by navigating to the `Identity providers > identity provider list` section in the sidebar menu.
 
-![identity provider form](/assets/images/identity-providers-list.png)
+![identity provider view](/assets/images/identity-providers-list.png)
 
 ## Manage through API
 

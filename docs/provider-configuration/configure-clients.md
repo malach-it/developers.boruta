@@ -14,9 +14,9 @@ For __each client__ you can configure a specific __identity provider__, that wil
 
 ## Manage through User Interface
 
-The Administration interface gives the ability to create, update and delete clients. Clients are listed through the clients section in the sidebar menu.
+The Administration interface gives the ability to create, update and delete clients. Clients are listed through the `Clients > client list` section in the sidebar menu.
 
-![client form](/assets/images/oauth-clients-list.png)
+![client view](/assets/images/oauth-clients-list.png)
 
 ## Manage through API
 

@@ -1,10 +1,10 @@
 # Identity providers configuration | General configuration
 
-Identity providers parameters help to __manage end-user means of authentication__. It gives the ability for them to follow the configured way they have to authenticate themselves to the service. Beyond authentication, the server provide ways for the end-user to manage identities and access.
+Identity providers parameters help to __manage end-user means of authentication__. It gives the ability for them to follow the configured way they have to authenticate themselves to the service. Beyond authentication, the server provide ways for the end-users to manage identities and access.
 
 
 :::note Parameters sections
-[Identity providers](/docs/provider-configuration/configure-identity-providers) can be customized through either the [Administration API](/api/list-clients) or the user interface providing 2 __categories of settings__:
+[Identity providers](/docs/provider-configuration/configure-identity-providers) can be customized through either the [Administration API](/api/list-identity-providers) or the user interface providing 2 __categories of settings__:
 
 - __General configuration__
 - Features

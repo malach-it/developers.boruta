@@ -2,14 +2,14 @@
 
 <div class="vision">
 
-boruta aims to __provide organizations tools to manage their users digital identities__ for them to provide better services. From identity federation to decentralized identity, it also aims __to be end-user centric__ enabling confidentiality using the services and giving them privacy within their interactions. Those are made __to build better and secure software__ for both the organizations that build them and the end-users that use their services.
+boruta aims to __provide organizations tools to manage their users digital identities__ for them to provide better services. From identity federation to decentralized identity, it also aims __to be end-user centric__ enabling confidentiality using the services and giving them privacy within their interactions. Those are made __to build better and secure softwares__ for both the organizations that build them and the end-users that use their services.
 
 </div>
 
 
 ## What is boruta?
 
-Boruta is an __OAuth 2.0 and satellites specifications authorization server implementation__. As an __Identity and Access Management solution__, it helps centralize authorization and identity related issues within your infrastructures. boruta stands as a server that help for the users to authenticate and to expose and apply access rules for your HTTP services (APIs) enabling better security.
+Boruta is an __OAuth 2.0 and satellites specifications authorization server implementation__. As an __Identity and Access Management solution__, it helps centralize authorization and identity related issues within your infrastructures. boruta stands as a server that help for the users to authenticate and to expose and apply access rules for your HTTP services (APIs) enabling better security. On top of current identity infrastructures, boruta __implements decentralized identity specifications__ enabling it to provide a secure issuer and verifier along with an integrated wallet.
 
 ---
 
@@ -20,6 +20,10 @@ Boruta is an __OAuth 2.0 and satellites specifications authorization server impl
 boruta is composed of an __authorization server__, an __administration interface__, an __identity provider__ and an experimental __gateway__ for gathering all API security related needs for a serivce composed of one or more backends. It enables to have Single Sign On and identity federation capabilities following the OAuth 2.0 framework.
 
 <div class="centered"><img src="/assets/images/components.png" /></div>
+
+## Open core / Application layer architecture
+
+boruta is splited into an open core and an application layer giving from one side the authorization business logic and the other the exposition and authentication topics to provide a standalone server. This core is open source and avalilable as an [Elixir package on hex.pm](https://hex.pm/packages/boruta).
 
 ## Why another authorization provider?
 

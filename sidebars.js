@@ -81,6 +81,16 @@ const sidebars = {
           items: [
             {
               type: 'doc',
+              id: 'provider-configuration/backends/general-configuration',
+              label: 'General configuration'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/backends/type',
+              label: 'Type'
+            },
+            {
+              type: 'doc',
               id: 'provider-configuration/backends/email-configuration',
               label: 'Email configuration'
             },
@@ -88,6 +98,16 @@ const sidebars = {
               type: 'doc',
               id: 'provider-configuration/backends/identity-federation',
               label: 'Identity federation'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/backends/verifiable-credentials',
+              label: 'Verifiable credentials'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/backends/user-metadata',
+              label: 'User metadata'
             },
           ],
         },

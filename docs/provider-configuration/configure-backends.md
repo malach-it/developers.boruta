@@ -8,49 +8,25 @@ For __each client__ you can configure a specific __identity provider__, that wil
 
 ![Clients, identity providers, and backends](/assets/images/client-identity-provider-backend-en.png)
 
-> Have a look at [client configuration](provider-configuration/configure-clients.md)
+> Have a look at [client configuration](/docs/provider-configuration/configure-clients.md)
 
-> Have a look at [identity provider configuration](provider-configuration/configure-identity-providers.md)
+> Have a look at [identity provider configuration](/docs/provider-configuration/configure-identity-providers.md)
 
 ## Configuration
 
-Configuration helps to connect to user registries, credential storage along with enhanced features for them.
-
-### Internal backend
-
-User credentials can be stored internally, in instance connected database. Those users are scoped by backend having an applicative silot (but not hard). For them, you can select the used **hashing algorithm**:
-- argon2
-- bcrypt
-- pbkdf2
-
-For each of those, you have a low level configuration in order to fit the best your use case, for example if you have to manage user import.
-
-> If none of the hashing algorithms suit your use case, you can leave [an issue](https://github.com/malach-it/boruta-server/issues) for us to consider implementing it.
-
-### LDAP backend
-
-You can also configure a pool of connection to a LDAP server setting the configuration, up to user edition providing the master password if you need to.
-
-### SMTP client
-
-boruta users are enhanced with features like email confirmation or password reset. In order to send the according emails, you can configure a connection to an SMTP server for it to send the needed emails.
-
-### User metadata
-
-As user enhancement, there is also the ability to add attributes to users. Starting by being named, you can setup scope restriction in order for the attributes to be visible in the ID token or the userinfo only when the client requested certain scopes that are to be defined here. Last, the scopes are editable by the users on the user edition page. You can disable the ability of edition here.
-
-### Identity federation
-
-This server enable to configure "login with" buttons enabling identity federation. That federation is made by setting the OAuth configuration for the application you created on the federated provider. Providing the name, used to identify the configuration, the server client_id, client_secret and endpoints needed to authenticate, boruta will be able to connect to the server enabling thrid-party authentication. You can also gather protected resources from this provider filling the metadata endpoints. Those will be available as read-only user metadata information. In templates, the login url will be available as `federated_servers.<name>.login_url` variable in order for the integrator to implement the according "login with" button.
+Backends configuration helps to __connect to user registries__, means of credential storage along with __enhanced features__ for them. Those are to keep credentials and identities while providing them abilities helping manage authorization and authentication provided by [identity provider](/docs/provider-configuration/configure-identity-providers) interfaces.
 
 ## Manage through User Interface
 
-The Administration interface gives the ability to create, update and delete backends. All backend attributes are accessible via the captured form below. All these operations can be managed in the "Identity providers > list backends" section in the sidebar menu.
+The Administration interface gives the ability to create, update and delete backends. Backends are listed through the `Identity providers > backend list` section in the sidebar menu.
 
-![client form](/assets/images/backend-form.png)
+![backend view](/assets/images/backends-list.png)
 
-## Manage through API
+## Navigation
 
-All backend operations are accessible through a REST API following the below description. All backend management endpoints are protected with a Bearer token that can be obtained with any OAuth flow. In order to get access, you need to have an access token with the [private](provider-configuration/configure-scopes.md#public-vs-private-scopes) scope `backends:manage:all` granted.
-
-> Have a look at [How to get restricted access](management-api#get-an-access-token)
+- Top level configuration - [General configuration](/docs/provider-configuration/backends/general-configuration)
+- Backend type - [Type](/docs/provider-configuration/backends/type)
+- Sending emails - [Email configuration](/docs/provider-configuration/backends/email-configuration)
+- Federating identities - [Identity federation](/docs/provider-configuration/backends/identity-federation)
+- Issuing / Verifying Verifiable Credentials - [Verifiable credentials](/docs/provider-configuration/backends/verifiable-credentials)
+- Custom user attributes - [User metadata](/docs/provider-configuration/backends/user-metadata)

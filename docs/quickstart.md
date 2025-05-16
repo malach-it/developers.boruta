@@ -48,7 +48,6 @@ DID_SERVICES_API_KEY=<Godiddy generated credentials>
 
 Navigating to [example client edit page](http://localhost:8081/clients/00000000-0000-0000-0000-000000000001/edit), in the security section, you have the ability to trigger the example client DID generation ("Regenerate client did"). Thiw will generate the DID associated to the client cryptograhic key pair.
 
-
 ### 3.3 Configure the server
 
 On the administration homepage you can navigate to "Load example configuration" link that enables to display an __example configuration to be persisted__ within `Configuration > Upload a configuration file` section. The configuration file is ready to be used, triggering "Upload configuration" button uploads the configuration and persists it.
