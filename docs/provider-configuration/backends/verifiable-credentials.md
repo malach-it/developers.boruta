@@ -1,4 +1,4 @@
-# Backends configuration | Verifiable credentials
+# (WIP) Backends configuration | Verifiable credentials
 
 Backends parameters help to __manage identity storage and associated features__ within the server. Those are to keep credentials and identities while providing them abilities helping to manage authorization and authentication provided by identity provider interfaces.
 

@@ -1,3 +1,3 @@
-# Global configuration
+# (WIP) Global configuration
 
 ## Error templates

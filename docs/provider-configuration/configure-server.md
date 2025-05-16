@@ -1,1 +1,1 @@
-# Global configuration
+# (WIP) Global configuration

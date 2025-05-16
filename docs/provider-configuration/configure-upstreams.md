@@ -1,4 +1,4 @@
-# Upstreams configuration
+# (WIP) Upstreams configuration
 
 Upstreams are here the configuration of the flow the gateway will apply for requests to be __forwarded to backends__. Corresponding to given paths, the gateway will __route the requests__ to the configured server. More than routing capabilities, boruta __enhance the requests__ with the current client and user information but also can __apply authorization__ to them.
 

@@ -1,4 +1,4 @@
-# Configure scopes
+# (WIP) Configure scopes
 
 Scopes as stated in OAuth 2.0 specification are made of a string that represent the capabilities (an important word used in API security) the access token have. It basically set the feature perimeter the AT have on the reseource server, noting that scpoes are RS wise, the definition of the perimeter is specific to the RS that implements the resource scope both on feature than data of each OAuth scope string representation. As an example `users:manage:all` would give access to managing ability of the users resource with access to all users data scope.
 

@@ -1,4 +1,4 @@
-# boruta identity platform documentation
+# (WIP) boruta identity platform documentation
 
 <div class="vision">
 
@@ -19,13 +19,17 @@ Boruta is an __OAuth 2.0 and satellites specifications authorization server impl
 
 boruta is composed of an __authorization server__, an __administration interface__, an __identity provider__ and an experimental __gateway__ for gathering all API security related needs for a serivce composed of one or more backends. It enables to have Single Sign On and identity federation capabilities following the OAuth 2.0 framework.
 
-<div class="centered"><img src="/assets/images/components.png" /></div>
+<div class="centered">
+
+![components](/assets/images/components.png)
+
+</div>
 
 ## Open core / Application layer architecture
 
 boruta is splited into an open core and an application layer giving from one side the authorization business logic and the other the exposition and authentication topics to provide a standalone server. This core is open source and avalilable as an [Elixir package on hex.pm](https://hex.pm/packages/boruta).
 
-## Why another authorization provider?
+## Why another authorization server?
 
 boruta has been designed to be both __end-user and developer friendly__. With a high level of customization, it helps to have an immersive experience for your users giving them custom interfaces. The administration interface gives an exhaustive set of configuration switches that is also accessible through REST API calls for automation.
 

@@ -102,31 +102,31 @@ const sidebars = {
             {
               type: 'doc',
               id: 'provider-configuration/backends/verifiable-credentials',
-              label: 'Verifiable credentials'
+              label: '(WIP) Verifiable credentials'
             },
             {
               type: 'doc',
               id: 'provider-configuration/backends/user-metadata',
-              label: 'User metadata'
+              label: '(WIP) User metadata'
             },
           ],
         },
         'provider-configuration/configure-scopes',
         {
           type: 'category',
-          label: 'Global configuration',
+          label: '(WIP) Global configuration',
           link: { type: 'doc', id: 'provider-configuration/configure-server' },
           collapsed: false,
           items: [
             {
               type: 'doc',
               id: 'provider-configuration/configuration/error-templates',
-              label: 'Error templates'
+              label: '(WIP) Error templates'
             },
             {
               type: 'doc',
               id: 'provider-configuration/configuration/configuration-files',
-              label: 'Configuration files'
+              label: '(WIP) Configuration files'
             },
           ],
         },
