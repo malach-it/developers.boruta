@@ -28,6 +28,8 @@ __\_csrf_token__ gives the anti request forgery token that is to be sent along w
 
 __errors__ gives the current errors array having for each of them a `message` attribute.
 
+__client__ gives the current client associated to the request, it has all the corresponding client attributes.
+
 #### The server URL that the end-user can navigate to
 
 __delete_user_session_path__ accessible through `DELETE`
