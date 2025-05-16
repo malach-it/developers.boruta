@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdevelopers_boruta=self.webpackChunkdevelopers_boruta||[]).push([[2634],{30192:(e,r,t)=>{t.r(r),t.d(r,{default:()=>s});var o=t(96540),u=t(56347);function s(){return o.createElement(u.rd,{to:"developers.boruta/docs/intro"})}}}]);
