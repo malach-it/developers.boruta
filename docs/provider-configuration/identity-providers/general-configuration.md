@@ -16,7 +16,7 @@ Identity providers parameters help to __manage end-user means of authentication_
 
 __Name__ help to recognize the configured identity provider within the administration interface.
 
-__Backend__ set the connected backend providing the end-user credentials, configurations and attributes.
+__Backend__ set the associated backend providing the end-user credentials, configurations and attributes.
 
 __Sessions__ help to configure the log in temaplates and features giving means for the user to be identified giving its username.
 - __check password__ switches the password requirement for authentication. Whenn disabled, the server creates a one time login associated to the username.

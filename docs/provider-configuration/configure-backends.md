@@ -14,7 +14,7 @@ For __each client__ you can configure a specific __identity provider__, that wil
 
 ## Configuration
 
-Backends configuration helps to __connect to user registries__, means of credential storage along with __enhanced features__ for them. Those are to keep credentials and identities while providing them abilities helping manage authorization and authentication provided by [identity provider](/docs/provider-configuration/configure-identity-providers) interfaces.
+Backends configuration helps to __select associated user registries__, means of credential storage along with __enhanced features__ for them. Those are to keep credentials and identities while providing them abilities helping manage authorization and authentication provided by [identity provider](/docs/provider-configuration/configure-identity-providers) interfaces.
 
 ## Manage through User Interface
 
