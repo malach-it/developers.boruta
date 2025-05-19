@@ -41,6 +41,74 @@
   background: var(--ifm-menu-link-sublist-icon) 50% / 1.3rem 1.3rem;
 }
 
+.plugin-openapi .container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.plugin-openapi table tr {
+  border: none !important;
+  background: #fff !important;
+}
+
+[data-theme='dark'].plugin-openapi table tr {
+  border: none !important;
+  background: var(--ifm-color-gray-900) !important;
+}
+
+.plugin-openapi table td {
+  padding: 0 0 0 0.7em;
+  font-size: 1.1rem;
+  border: none !important;
+  border-left: 2px solid var(--ifm-color-gray-200) !important;
+  text-align: right;
+}
+
+.plugin-openapi table {
+  margin-top: 0 !important;
+  margin-bottom: 1em !important;
+}
+
+.plugin-openapi table th {
+  font-size: 1.3em;
+  background: #fff;
+  border: none !important;
+}
+
+[data-theme='dark'].plugin-openapi table th {
+  background: var(--ifm-color-gray-900) !important;
+}
+
+.plugin-openapi table td code {
+  display: inline-block;
+  float: left;
+  min-width: 70%;
+  padding: 0.5em 1em;
+  margin-bottom: 0.7em;
+  margin-right: 1em;
+  text-align: left;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-gray-700);
+}
+
+@media (max-width: 768px) {
+  .plugin-openapi table td code {
+    min-width: 100%;
+  }
+}
+
+.plugin-openapi table td span, .plugin-openapi table td p {
+  line-height: 2.65em;
+}
+
+.plugin-openapi table td p {
+  float: left;
+}
+
+.plugin-openapi table td span {
+  opacity: 1 !important;
+}
 .centered {
   text-align: center;
 }
