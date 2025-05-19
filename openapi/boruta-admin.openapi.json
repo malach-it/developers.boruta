@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://admin.boruta.patatoid.fr",
+      "url": "http://localhost:8081",
       "variables": {}
     }
   ],
@@ -17,9 +17,16 @@
         "tags": [
           "Clients"
         ],
-        "summary": "list clients",
+        "summary": "List clients",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients</code> Lists all the clients available on the server</p>",
         "operationId": "listclients",
         "parameters": [],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -74,7 +81,8 @@
         "tags": [
           "Clients"
         ],
-        "summary": "create a client",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>POST /api/clients</code> creates a client resource</p>",
+        "summary": "Create a client",
         "operationId": "createaclient",
         "parameters": [],
         "requestBody": {
@@ -117,53 +125,14 @@
           },
           "required": true
         },
-        "responses": {
-          "201": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Client"
-                    }
-                  }
-                }
-              }
-            }
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
           }
         },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      }
-    },
-    "/api/clients/{client_id}": {
-      "get": {
-        "tags": [
-          "Clients"
-        ],
-        "summary": "show a client",
-        "operationId": "showaclient",
-        "parameters": [
-          {
-            "name": "client_id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
         "responses": {
-          "200": {
+          "201": {
             "description": "",
             "headers": {},
             "content": {
@@ -208,12 +177,98 @@
             "bearer": []
           }
         ]
+      }
+    },
+    "/api/clients/{client_id}": {
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Show a client",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients/:client_id</code> shows the identified client resource</p>",
+        "operationId": "showaclient",
+        "parameters": [
+          {
+            "name": "client_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Client"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource could not be found.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
       },
       "patch": {
         "tags": [
           "Clients"
         ],
-        "summary": "update a client",
+        "summary": "Update a client",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>PATCH /api/clients/:client_id</code> updates the identified client resource</p>",
         "operationId": "updateaclient",
         "parameters": [
           {
@@ -267,6 +322,12 @@
           },
           "required": true
         },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -280,6 +341,17 @@
                       "$ref": "#/components/schemas/Client"
                     }
                   }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource could not be found.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
                 }
               }
             }
@@ -318,7 +390,8 @@
         "tags": [
           "Clients"
         ],
-        "summary": "delete a client",
+        "summary": "Delete a client",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>DELETE /api/clients/:client_id</code> deletes permanently the identified client resource</p>",
         "operationId": "deleteaclient",
         "parameters": [
           {
@@ -332,10 +405,57 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "204": {
-            "description": "",
-            "headers": {}
+            "description": "No Content",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "title": "NoContent",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource could not be found.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
           }
         },
         "deprecated": false,
@@ -354,6 +474,12 @@
         "summary": "list scopes",
         "operationId": "listscopes",
         "parameters": [],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -423,6 +549,12 @@
           },
           "required": true
         },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "201": {
             "description": "",
@@ -468,6 +600,12 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -549,6 +687,12 @@
           },
           "required": true
         },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -614,10 +758,24 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "204": {
-            "description": "",
-            "headers": {}
+            "description": "No Content",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "title": "NoContent",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         },
         "deprecated": false,
@@ -636,6 +794,12 @@
         "summary": "list upstreams",
         "operationId": "listupstreams",
         "parameters": [],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -717,6 +881,12 @@
           },
           "required": true
         },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "201": {
             "description": "",
@@ -762,6 +932,12 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -856,6 +1032,12 @@
           },
           "required": true
         },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -921,10 +1103,24 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "204": {
-            "description": "",
-            "headers": {}
+            "description": "No Content",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "title": "NoContent",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         },
         "deprecated": false,
@@ -943,6 +1139,12 @@
         "summary": "list identity providers",
         "operationId": "listidentityProviders",
         "parameters": [],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -1016,6 +1218,12 @@
           },
           "required": true
         },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "201": {
             "description": "",
@@ -1061,6 +1269,12 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -1147,6 +1361,12 @@
           },
           "required": true
         },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -1212,10 +1432,24 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "204": {
-            "description": "",
-            "headers": {}
+            "description": "No Content",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "title": "NoContent",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         },
         "deprecated": false,
@@ -1255,6 +1489,12 @@
             }
           }
         ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -1311,6 +1551,12 @@
         "summary": "list users",
         "operationId": "listusers",
         "parameters": [],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
         "responses": {
           "200": {
             "description": "",
@@ -1451,8 +1697,7 @@
             "type": "array",
             "items": {
               "type": "string"
-            },
-            "description": ""
+            }
           },
           "refresh_token_ttl": {
             "type": "integer",
@@ -1468,10 +1713,10 @@
             "type": "array",
             "items": {
               "type": "string"
-            },
-            "description": ""
+            }
           }
         },
+        "required": ["identity_provider"],
         "example": {
           "access_token_ttl": 86400,
           "authorization_code_ttl": 60,
@@ -1811,16 +2056,11 @@
       },
       "IdentityProvider": {
         "title": "IdentityProvider",
-        "required": [
-          "choose_session",
-          "confirmable",
-          "consentable",
-          "name",
-          "registrable",
-          "type"
-        ],
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "choose_session": {
             "type": "boolean"
           },
@@ -1840,6 +2080,7 @@
             "type": "string"
           }
         },
+        "required": ["id"],
         "example": {
           "choose_session": true,
           "confirmable": false,
@@ -1957,6 +2198,26 @@
         "example": {
           "code": "UNAUTHORIZED",
           "message": "The client is unauthorized to access this resource."
+        }
+      },
+      "NotFound": {
+        "title": "Not Found",
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "code": "Not found",
+          "message": "The requested resource could not be found."
         }
       },
       "Forbidden": {

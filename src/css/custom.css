@@ -58,7 +58,6 @@
 
 .plugin-openapi table td {
   padding: 0 0 0 0.7em;
-  font-size: 1.1rem;
   border: none !important;
   border-left: 2px solid var(--ifm-color-gray-200) !important;
   text-align: right;
@@ -70,7 +69,7 @@
 }
 
 .plugin-openapi table th {
-  font-size: 1.3em;
+  font-size: 1.2rem;
   background: #fff;
   border: none !important;
 }
