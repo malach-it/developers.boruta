@@ -102,12 +102,12 @@ const sidebars = {
             {
               type: 'doc',
               id: 'provider-configuration/backends/verifiable-credentials',
-              label: '(WIP) Verifiable credentials'
+              label: 'Verifiable Credentials'
             },
             {
               type: 'doc',
               id: 'provider-configuration/backends/user-metadata',
-              label: '(WIP) User metadata'
+              label: 'User metadata'
             },
           ],
         },

@@ -9,13 +9,7 @@ boruta aims to __provide organizations tools to manage their users digital ident
 
 ## What is boruta?
 
-Boruta is an __OAuth 2.0 and satellites specifications authorization server implementation__. As an __Identity and Access Management solution__, it helps centralize authorization and identity related issues within your infrastructures. boruta stands as a server that help for the users to authenticate and to expose and apply access rules for your HTTP services (APIs) enabling better security. On top of current identity infrastructures, boruta __implements decentralized identity specifications__ enabling it to provide a secure issuer and verifier along with an integrated wallet.
-
----
-
-<iframe src="https://www.loom.com/embed/7c3c10ad219c45238c92bab19c6da6bd?sid=030ed6aa-00ea-4d5f-ab56-7836e6ee662c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
----
+boruta is an __OAuth 2.0 and satellites specifications authorization server implementation__. As an __Identity and Access Management solution__, it helps centralize authorization and identity related issues within your infrastructures. boruta stands as a server that help for the users to authenticate and to expose and apply access rules for your HTTP services (APIs) enabling better security. On top of current identity infrastructures, boruta __implements decentralized identity specifications__ enabling it to provide a secure issuer and verifier along with an integrated wallet.
 
 boruta is composed of an __authorization server__, an __administration interface__, an __identity provider__ and an experimental __gateway__ for gathering all API security related needs for a serivce composed of one or more backends. It enables to have Single Sign On and identity federation capabilities following the OAuth 2.0 framework.
 
@@ -24,6 +18,12 @@ boruta is composed of an __authorization server__, an __administration interface
 ![components](/assets/images/components.png)
 
 </div>
+
+---
+
+<iframe src="https://www.loom.com/embed/7c3c10ad219c45238c92bab19c6da6bd?sid=030ed6aa-00ea-4d5f-ab56-7836e6ee662c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+---
 
 ## Open core / Application layer architecture
 
