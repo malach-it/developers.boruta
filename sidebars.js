@@ -141,17 +141,7 @@ const sidebars = {
             },
           ],
         },
-        'provider-configuration/management-api',
         'provider-configuration/configure-upstreams',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Deployment',
-      collapsed: false,
-      items: [
-        'deployment/docker',
-        'deployment/standalone',
       ],
     },
     // {

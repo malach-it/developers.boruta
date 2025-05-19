@@ -86,4 +86,3 @@ This server has also been certified against the [European Blockchain Service Inf
 
 1. Getting up and running - [Quickstart](quickstart.md)
 2. Understand how to configure the server - [provider configuration](provider-configuration/configure-clients.md)
-3. Set up boruta into your infrastructure - [deployment](deployment/docker.md)
