@@ -111,22 +111,33 @@ const sidebars = {
             },
           ],
         },
-        'provider-configuration/configure-scopes',
         {
           type: 'category',
-          label: '(WIP) Global configuration',
-          link: { type: 'doc', id: 'provider-configuration/configure-server' },
+          label: 'Scopes configruation',
+          link: { type: 'doc', id: 'provider-configuration/configure-scopes' },
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'provider-configuration/scopes/roles',
+              label: 'Roles configuration'
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Global configuration',
           collapsed: false,
           items: [
             {
               type: 'doc',
               id: 'provider-configuration/configuration/error-templates',
-              label: '(WIP) Error templates'
+              label: 'Error templates'
             },
             {
               type: 'doc',
               id: 'provider-configuration/configuration/configuration-files',
-              label: '(WIP) Configuration files'
+              label: 'Configuration files'
             },
           ],
         },

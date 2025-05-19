@@ -1,1 +1,0 @@
-# (WIP) Global configuration
