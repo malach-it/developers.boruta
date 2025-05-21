@@ -22,6 +22,8 @@ const sidebars = {
       items: [],
     },
     'quickstart',
+    'credential-issuance',
+    'credentials-presentation',
     {
       type: 'category',
       label: 'Provider configuration',
