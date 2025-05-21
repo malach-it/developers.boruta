@@ -165,10 +165,6 @@ iframe {
   height: 550px;
 }
 
-.vision {
-  text-align: center;
-}
-
 .parameters strong, .vision strong {
   font-size: 1.1em;
   color: var(--ifm-color-primary);
