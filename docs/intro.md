@@ -19,12 +19,6 @@ boruta is composed of an __authorization server__, an __administration interface
 
 </div>
 
----
-
-<iframe src="https://www.loom.com/embed/7c3c10ad219c45238c92bab19c6da6bd?sid=030ed6aa-00ea-4d5f-ab56-7836e6ee662c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
----
-
 ## Open core / Application layer architecture
 
 boruta is splited into an open core and an application layer giving from one side the authorization business logic and the other the exposition and authentication topics to provide a standalone server. This core is open source and avalilable as an [Elixir package on hex.pm](https://hex.pm/packages/boruta).
