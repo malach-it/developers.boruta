@@ -18,7 +18,7 @@
           "Clients"
         ],
         "summary": "List clients",
-        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients</code> Lists all the clients available on the server</p>",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients</code> list all the clients available on the server</p>",
         "operationId": "listclients",
         "parameters": [],
         "securitySchemes": {
@@ -431,6 +431,521 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/identity-providers": {
+      "get": {
+        "tags": [
+          "Identity providers"
+        ],
+        "summary": "list identity providers",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>GET /api/identity-providers</code> list all the identity providers available on the server</p>",
+        "operationId": "listidentityProviders",
+        "parameters": [],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IdentityProvider"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Identity providers"
+        ],
+        "summary": "create a identity provider",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>POST /api/identity-providers</code> creates an identity provider resource</p>",
+        "operationId": "createaidentityProvider",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/createaidentityProviderrequest"
+              },
+              "example": {
+                "identity_provider": {
+                  "choose_session": true,
+                  "confirmable": false,
+                  "consentable": false,
+                  "name": "Created fom API",
+                  "registrable": false,
+                  "type": "internal"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/IdentityProvider"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/identity-providers/{identity_provider_id}": {
+      "get": {
+        "tags": [
+          "Identity providers"
+        ],
+        "summary": "show a identity provider",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>GET /api/identity-providers/:identity_provider_id</code> shows the identified identity provider resource</p>",
+        "operationId": "showaidentityProvider",
+        "parameters": [
+          {
+            "name": "identity_provider_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/IdentityProvider"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Identity providers"
+        ],
+        "summary": "update a identity provider",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>PATCH /api/identity-providers/:identity_provider_id</code> updates the identified identity provider resource</p>",
+        "operationId": "updateaidentityProvider",
+        "parameters": [
+          {
+            "name": "identity_provider_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/updateaidentityProviderrequest"
+              },
+              "example": {
+                "identity_provider": {
+                  "choose_session": true,
+                  "confirmable": false,
+                  "consentable": false,
+                  "name": "Updated fom API",
+                  "registrable": false,
+                  "type": "internal"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/IdentityProvider"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Identity providers"
+        ],
+        "summary": "delete a identity provider",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>DELETE /api/identity-providers/:identity_provider_id</code> deletes the identified identity provider resource</p>",
+        "operationId": "deleteaidentityProvider",
+        "parameters": [
+          {
+            "name": "identity_provider_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "title": "NoContent",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource could not be found.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/identity-providers/{identity_provider_id}/templates/{template_name}": {
+      "get": {
+        "tags": [
+          "Identity provider templates"
+        ],
+        "summary": "show a identity provider template",
+        "operationId": "showaidentityProvidertemplate",
+        "parameters": [
+          {
+            "name": "identity_provider_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "template_name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Template"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The client is unauthorized to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Unauthorized"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The client is forbidden to access this resource.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/users": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "list users",
+        "operationId": "listusers",
+        "parameters": [],
+        "securitySchemes": {
+          "bearer": {
+            "type": "http",
+            "scheme": "bearer"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/User"
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -1131,483 +1646,6 @@
         ]
       }
     },
-    "/api/identity-providers": {
-      "get": {
-        "tags": [
-          "identity providers"
-        ],
-        "summary": "list identity providers",
-        "operationId": "listidentityProviders",
-        "parameters": [],
-        "securitySchemes": {
-          "bearer": {
-            "type": "http",
-            "scheme": "bearer"
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/IdentityProvider"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "The client is unauthorized to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unauthorized"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "The client is forbidden to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Forbidden"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      },
-      "post": {
-        "tags": [
-          "identity providers"
-        ],
-        "summary": "create a identity provider",
-        "operationId": "createaidentityProvider",
-        "parameters": [],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/createaidentityProviderrequest"
-              },
-              "example": {
-                "identity_provider": {
-                  "choose_session": true,
-                  "confirmable": false,
-                  "consentable": false,
-                  "name": "Created fom API",
-                  "registrable": false,
-                  "type": "internal"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "securitySchemes": {
-          "bearer": {
-            "type": "http",
-            "scheme": "bearer"
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/IdentityProvider"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      }
-    },
-    "/api/identity-providers/{identity_provider_id}": {
-      "get": {
-        "tags": [
-          "identity providers"
-        ],
-        "summary": "show a identity provider",
-        "operationId": "showaidentityProvider",
-        "parameters": [
-          {
-            "name": "identity_provider_id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "securitySchemes": {
-          "bearer": {
-            "type": "http",
-            "scheme": "bearer"
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/IdentityProvider"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "The client is unauthorized to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unauthorized"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "The client is forbidden to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Forbidden"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      },
-      "patch": {
-        "tags": [
-          "identity providers"
-        ],
-        "summary": "update a identity provider",
-        "operationId": "updateaidentityProvider",
-        "parameters": [
-          {
-            "name": "identity_provider_id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/updateaidentityProviderrequest"
-              },
-              "example": {
-                "identity_provider": {
-                  "choose_session": true,
-                  "confirmable": false,
-                  "consentable": false,
-                  "name": "Updated fom API",
-                  "registrable": false,
-                  "type": "internal"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "securitySchemes": {
-          "bearer": {
-            "type": "http",
-            "scheme": "bearer"
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/IdentityProvider"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "The client is unauthorized to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unauthorized"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "The client is forbidden to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Forbidden"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "identity providers"
-        ],
-        "summary": "delete a identity provider",
-        "operationId": "deleteaidentityProvider",
-        "parameters": [
-          {
-            "name": "identity_provider_id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "securitySchemes": {
-          "bearer": {
-            "type": "http",
-            "scheme": "bearer"
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "No Content",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "title": "NoContent",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      }
-    },
-    "/api/identity-providers/{identity_provider_id}/templates/{template_name}": {
-      "get": {
-        "tags": [
-          "identity providers"
-        ],
-        "summary": "show a identity provider template",
-        "operationId": "showaidentityProvidertemplate",
-        "parameters": [
-          {
-            "name": "identity_provider_id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "template_name",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "securitySchemes": {
-          "bearer": {
-            "type": "http",
-            "scheme": "bearer"
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Template"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "The client is unauthorized to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unauthorized"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "The client is forbidden to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Forbidden"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      }
-    },
-    "/api/users": {
-      "get": {
-        "tags": [
-          "identity providers"
-        ],
-        "summary": "list users",
-        "operationId": "listusers",
-        "parameters": [],
-        "securitySchemes": {
-          "bearer": {
-            "type": "http",
-            "scheme": "bearer"
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/User"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "The client is unauthorized to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Unauthorized"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "The client is forbidden to access this resource.",
-            "headers": {},
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Forbidden"
-                }
-              }
-            }
-          }
-        },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
-      }
-    }
   },
   "components": {
     "schemas": {
