@@ -24,8 +24,6 @@ As an __open-source product__, it takes the advantage to being backed by a commu
 
 > Have a look at the [GitHub repository](https://github.com/malach-it/boruta-server)
 
-This server has been __designed for scalability__, the firsts load tests were performed at 1500 requests per second with a standard production server with no latency issues. The Erlang Virtual Machine used as a platform makes it also scallable in an horizontal way providing more machines and connecting them together.
-
 With an implementation of __OpenID 4 Verifiable Credentials Issuance__ (OID4VCI) and __OpenID 4 Verifiable presentations__ (OID4VP), boruta provides means to be __compliant with the eIDAS 2.0 regulation__. On top of those protocols, it brings ways to get identities from a data source still being secure and with __low integration costs__, being part of your infrastructure by addition, not replacement. Indeed, boruta can leverage identity federation to restrict access to verifiable credentials making it a __secure and privacy preserving solution__.
 
 ![Tripartite authorization](/assets/images/authorization-tripartite.png)
