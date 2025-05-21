@@ -27,7 +27,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Provider configuration',
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: 'category',
