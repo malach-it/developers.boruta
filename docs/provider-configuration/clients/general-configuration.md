@@ -17,6 +17,14 @@ Client attributes help __manage the authorization capabilities for OAuth 2.0 and
 
  __Id__ would be the identifier of the client, it will be used as the OAuth `client_id` parameter. Note that once the client is created this value can't be changed.
 
+ __Public client ID__ would be the identifier of the public client, linked to the issuer, to be active it must have the `BORUTA_OAUTH_BASE_URL` environment variable value.
+
+:::note public clients
+
+Public clients are used in __Verifiable Credentials presentations__. They are identified by a DID as the provided `client_id` in authorization requests and __do not require authentication__ as the identified resource owner is represented by the wallet that is cryptographically verified.
+
+:::
+
  __Secret__ would be used as the `client_secret` parameter in OAuth flows.
 
  __Name__ would be accessible in the consent template to highlight for which client the resource owner delegates access to the requested scopes
