@@ -38,7 +38,7 @@ In order to authenticate to the administration interface you will be asked for c
 
 ### 3.1 Get a DID services API key
 
-boruta uses Universal resolver to generate and resolve DIDs. By default, the server is configured to use [Godiddy](https://godiddy.com/) services, you can get an API key registering to their services and set the corresponding environment variable in `.env.example` file.
+boruta uses Universal resolver to generate and resolve DIDs. By default, the server is configured to use [Godiddy](https://godiddy.com/) services, you can __get an API key__ registering to their services and set the corresponding environment variable in `.env.example` file.
 
 ```env
 DID_SERVICES_API_KEY=<Godiddy generated credentials>
@@ -50,7 +50,7 @@ On the administration homepage you can navigate to "Load example configuration" 
 
 ### 3.3 Generate client DID
 
-Navigating to [example client edit page](http://localhost:8081/clients/00000000-0000-0000-0000-000000000001/edit), in the security section, you have the ability to trigger the example client DID generation ("Regenerate client did"). Thiw will generate the DID associated to the client cryptograhic key pair.
+Navigating to [example client edit page](http://localhost:8081/clients/00000000-0000-0000-0000-000000000001/edit), in the security section, you have the ability to __generate example client DID__ ("Regenerate client did"). Thiw will generate the DID associated to the client cryptograhic key pair.
 
 ### 3.4 Running the flows
 
