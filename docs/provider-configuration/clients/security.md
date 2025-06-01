@@ -13,12 +13,13 @@ Client attributes help to __manage the authorization capabilities for OAuth 2.0 
 
 ## Cryptographic Signatures
 
-boruta gives means to __implement and connect signature adapters__ which provide means for signing the authorization artifacts both from the federated identity (ID Tokens) and the decentralized identity (Verifiable Credentials). __Out of the box__, an internal (boruta provided) and an Universal adapter are implemented and ready to use. Those support cryptographic material generation and use along side with Decentralized IDentifiers support. Public and Private Keys are the __base for enabling signatures__ and the public part of the keys is exposed through the jwks OpenID endpoint. This enables to connect boruta to __Hardware Security Modules (HSM)__ with low effort, enabling them to store cryptographic keys in a secure enclave.
+boruta gives means to __implement and connect signature adapters__ which provide means for signing the authorization artifacts both from the federated identity (ID Tokens) and the decentralized identity (Verifiable Credentials). __Out of the box__, an internal (boruta provided) and an Universal adapter are implemented and ready to use. Those support cryptographic material generation and use along side with Decentralized IDentifiers support. Public and Private Keys are the __base for enabling signatures__ and the public part of the keys is exposed through the jwks OpenID endpoint. Those keys will be used for the signature of ID Tokens, Userinfo (if needed) and Verifiable Credentials. This enables to connect boruta to __Hardware Security Modules (HSM)__ with low effort, enabling them to store cryptographic keys in a secure enclave.
 
 :::note Key pair types
 The type of the generated key pairs is tied to the signature algorithm used for JWTs signature:
 - __RSA keys__ enforce the JWTs signature algorithm to be of the `RS` algorithm class
 - __Elliptic curve keys__ enforce the JWTs signature algorithm to be of the `ES` algorithm class
+- __Universal keys__ enforce the JWTs signature algorithm to be of the `EdDSA` algorithm class
 :::
 
 ## Security parameters
