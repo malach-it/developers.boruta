@@ -30,6 +30,8 @@ __ID token signature algorithm__ is the algorithm used to sign ID Token JWTs. It
 
 __Userinfo response signature algorithm__ is the algorithm used to sign userinfo response JWTs, the response being possibily not encoded and signed. It have to be in correspondance with the key pair type.
 
+### Authorization
+
 __Enforce Demonstration Proof-of-Possession (DPoP)__ enables the client to only support [DPoP](https://datatracker.ietf.org/doc/html/rfc9449) requests.
 
 __Enforce pre-authorized code transaction code__ enforces the presentation of a `tx_code` while issuing verifiable credentials.
@@ -37,6 +39,10 @@ __Enforce pre-authorized code transaction code__ enforces the presentation of a 
 __Authorize scope__ would determine if the client defines the specific public and private scopes to be authorized.
 
 __Authorized scopes__ would be the list of scopes that can be granted with this client.
+
+__Check public client id__ enforces the check of the presentation `vp_token` against the `client_id` parameter in OpenID 4 Verifiable Presentations flows.
+
+### Proof Key for Code Exchange
 
 __PKCE__ would determine if [Proof Key for Code Exchange](https://datatracker.ietf.org/doc/html/rfc7636) flow is enforced using this client.
 
