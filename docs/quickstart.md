@@ -52,6 +52,20 @@ On the administration homepage you can navigate to "Load example configuration" 
 
 Navigating to [example client edit page](http://localhost:8081/clients/00000000-0000-0000-0000-000000000001/edit), in the security section, you have the ability to __generate example client DID__ ("Regenerate client did"). Thiw will generate the DID associated to the client cryptograhic key pair.
 
+---
+
+<div class="centered">
+
+__Credential flows__
+
+---
+
+![issue-hold-verify](/assets/images/issue-hold-verify.png)
+
+</div>
+
+---
+
 ### 3.4 Running the flows
 
 boruta is intended to implement [OpenID 4 Verifiable Credentials Issuance](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) and [OpenID 4 Verifiable Presentations](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html). It helps getting Verifiable Credentials and store them within an identity wallet. And then to present them to be validated by the server.
