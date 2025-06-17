@@ -146,6 +146,18 @@ const sidebars = {
         'provider-configuration/configure-upstreams',
       ],
     },
+    {
+      type: 'category',
+      label: 'Drafts',
+      collapsed: true,
+      items: [
+        {
+          type: 'doc',
+          id: 'drafts/vc-decentralized-status',
+          label: 'VC decentralized status'
+        },
+      ]
+    },
     // {
     //   type: 'category',
     //   label: 'Gateway',
