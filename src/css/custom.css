@@ -150,6 +150,7 @@ li p {
 
 img {
   width: auto;
+  display: block;
   margin: auto;
   max-width: 100%;
 }

@@ -14,7 +14,7 @@ As stated the status adds information to verifiable credentials to assert creden
 
 ## 1. Introduction
 
-### 1. Specifications
+### 1.1 Specifications
 
 - HOTP
 
