@@ -108,6 +108,11 @@
 .plugin-openapi table td span {
   opacity: 1 !important;
 }
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: none;
+}
+
 .centered {
   text-align: center;
 }
