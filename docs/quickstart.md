@@ -77,7 +77,3 @@ On the administration homepage, following "Trigger example pre-authorized code f
 #### 3.4.2 Presenting a Verifiable credential
 
 Back to the administration homepage, you can, after getting the example Verifiable Credential, follow the "Trigger example presentation with associated boruta wallet (issue example credential first)" link. You will be asked to log in and then be redirected to the wallet. Finally, You will be able __to present your credential__.
-
-## Demonstration video (installation)
-
-<iframe src="https://www.loom.com/embed/77006360fdac44bc9113fab9cf30aba5?sid=c690ab5f-97a3-48ce-9b5a-cc98ec3ddd32" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
