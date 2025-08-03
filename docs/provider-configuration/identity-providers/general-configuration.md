@@ -7,6 +7,7 @@ Identity providers parameters help to __manage end-user means of authentication_
 [Identity providers](/docs/provider-configuration/configure-identity-providers) can be customized through either the [Administration API](/api/list-identity-providers) or the user interface providing 2 __categories of settings__:
 
 - __General configuration__
+- Templates edition
 - Features
 :::
 

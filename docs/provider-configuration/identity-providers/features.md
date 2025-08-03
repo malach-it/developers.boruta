@@ -1,12 +1,12 @@
 # Identity providers configuration | Features
 
-Identity providers parameters help to __manage end-user means of authentication__. It gives the ability for them to follow the configured way they have to authenticate themselves to the service. Beyond authentication, the server provide ways for the end-users to manage identities and access.
-
+As configuration, identity provider __features can be toggled__ to be activated or disabled. Those features __customize the authentication flow__ the user will encounter for identifying themselves to the service. The features give abilities such as session management, Multi-Factor Authentication, user management, or consent.
 
 :::note Parameters sections
 [Identity providers](/docs/provider-configuration/configure-identity-providers) can be customized through either the [Administration API](/api/list-identity-providers) or the user interface providing 2 __categories of settings__:
 
 - General configuration
+- Templates edition
 - __Features__
 :::
 

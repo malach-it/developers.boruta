@@ -838,8 +838,9 @@
         "tags": [
           "Identity provider templates"
         ],
-        "summary": "show a identity provider template",
-        "operationId": "showaidentityProvidertemplate",
+        "summary": "Show an identity provider template",
+        "description": "Identity providers templates are user interfaces that enable end-users to interact with the authorization server. Using Mustache templating engine, variables can be interpolated, they are given in <a href=\"/docs/provider-configuration/identity-providers/templates-edition\">the main documentation pages</a>.",
+        "operationId": "showanidentityProvidertemplate",
         "parameters": [
           {
             "name": "identity_provider_id",
@@ -903,6 +904,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Forbidden"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The requested resource could not be found.",
+            "headers": {},
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFound"
                 }
               }
             }

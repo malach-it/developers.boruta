@@ -70,6 +70,11 @@ const sidebars = {
             },
             {
               type: 'doc',
+              id: 'provider-configuration/identity-providers/templates-edition',
+              label: 'Templates edition'
+            },
+            {
+              type: 'doc',
               id: 'provider-configuration/identity-providers/features',
               label: 'Features'
             },
