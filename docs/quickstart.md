@@ -48,6 +48,8 @@ DID_SERVICES_API_KEY=<Godiddy generated credentials>
 
 On the administration homepage you can navigate to "Load example configuration" link that enables to display an __example configuration to be persisted__ within `Configuration > Upload a configuration file` section. The configuration file is ready to be used, triggering "Upload configuration" button uploads the configuration and persists it.
 
+The created backend has to be set as default for example flows to be functionnal. Navigating to the example backend configuration help to update the configuration in `Identity providers > Backends > 00000000-0000-0000-0000-000000000001` section.
+
 ### 3.3 Generate client DID
 
 Navigating to [example client edit page](http://localhost:8081/clients/00000000-0000-0000-0000-000000000001/edit), in the security section, you have the ability to __generate example client DID__ ("Regenerate client did"). Thiw will generate the DID associated to the client cryptograhic key pair.
