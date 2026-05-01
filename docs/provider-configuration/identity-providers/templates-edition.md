@@ -14,7 +14,7 @@ Identity provider templates are to be seen by the end-user, they are __editable 
 
 <div class="parameters">
 
-__{federated server name}.login_url__ gives the login URL in case of identity federation helping to implement "login with" button. That variable is associated with the [configuration of a federated server](/docs/provider-configuration/backends/identity-federation).
+__federated_servers.{federated server name}.login_url__ gives the login URL in case of identity federation helping to implement "login with" button. That variable is associated with the [configuration of a federated server](/docs/provider-configuration/backends/identity-federation).
 
 __messages__ gives the server messages array having for each of them `type` and `content` attributes.
 
