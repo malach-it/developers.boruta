@@ -151,6 +151,7 @@ const sidebars = {
         'provider-configuration/configure-upstreams',
       ],
     },
+    'rate-limiting',
     {
       type: 'category',
       label: 'Drafts',
