@@ -36,21 +36,13 @@ In order to authenticate to the administration interface you will be asked for c
 
 ## 3. Try Verifiable Credentials flows
 
-### 3.1 Get a DID services API key
-
-boruta uses Universal resolver to generate and resolve DIDs. By default, the server is configured to use [Godiddy](https://godiddy.com/) services, you can __get an API key__ registering to their services and set the corresponding environment variable in `.env.example` file.
-
-```env
-DID_SERVICES_API_KEY=<Godiddy generated credentials>
-```
-
-### 3.2 Configure the server
+### 3.1 Configure the server
 
 On the administration homepage you can navigate to "Load example configuration" link that enables to display an __example configuration to be persisted__ within `Configuration > Upload a configuration file` section. The configuration file is ready to be used, triggering "Upload configuration" button uploads the configuration and persists it.
 
 The created backend has to be set as default for example flows to be functionnal. Navigating to the example backend configuration help to update the configuration in `Identity providers > Backends > 00000000-0000-0000-0000-000000000001` section.
 
-### 3.3 Generate client DID
+### 3.2 Generate client DID
 
 Navigating to [example client edit page](http://localhost:8081/clients/00000000-0000-0000-0000-000000000001/edit), in the security section, you have the ability to __generate example client DID__ ("Regenerate client did"). Thiw will generate the DID associated to the client cryptograhic key pair.
 
@@ -68,14 +60,14 @@ __Credential flows__
 
 ---
 
-### 3.4 Running the flows
+### 3.3 Running the flows
 
 boruta is intended to implement [OpenID 4 Verifiable Credentials Issuance](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) and [OpenID 4 Verifiable Presentations](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html). It helps getting Verifiable Credentials and store them within an identity wallet. And then to present them to be validated by the server.
 
-#### 3.4.1 Issuing a Verifiable credential
+#### 3.3.1 Issuing a Verifiable credential
 
 On the administration homepage, following "Trigger example pre-authorized code flow with associated boruta wallet (load example data first)" link __triggers a Verifiable Credential issuance flow__. You can then register for a new account, and follow the tunnel. Through consent, you should see the credential offer page. Follow the "Get your verifiable credential" link and you will be redirected to boruta integrated wallet to store the offered credential.
 
-#### 3.4.2 Presenting a Verifiable credential
+#### 3.3.2 Presenting a Verifiable credential
 
 Back to the administration homepage, you can, after getting the example Verifiable Credential, follow the "Trigger example presentation with associated boruta wallet (issue example credential first)" link. You will be asked to log in and then be redirected to the wallet. Finally, You will be able __to present your credential__.
