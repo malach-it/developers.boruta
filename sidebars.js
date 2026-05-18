@@ -151,6 +151,28 @@ const sidebars = {
         'provider-configuration/configure-upstreams',
       ],
     },
+    {
+      type: 'category',
+      label: 'Dashboards',
+      collapsed: false,
+      items: [
+        {
+          type: 'doc',
+          id: 'dashboards/requests',
+          label: 'Requests'
+        },
+        {
+          type: 'doc',
+          id: 'dashboards/business-events',
+          label: 'Business events'
+        },
+        {
+          type: 'doc',
+          id: 'dashboards/tokens',
+          label: '(WIP) Tokens'
+        },
+      ],
+    },
     'rate-limiting',
     {
       type: 'category',
