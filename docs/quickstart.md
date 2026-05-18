@@ -40,7 +40,7 @@ In order to authenticate to the administration interface you will be asked for c
 
 On the administration homepage you can navigate to "Load example configuration" link that enables to display an __example configuration to be persisted__ within `Configuration > Upload a configuration file` section. The configuration file is ready to be used, triggering "Upload configuration" button uploads the configuration and persists it.
 
-The created backend has to be set as default for example flows to be functionnal. Navigating to the example backend configuration help to update the configuration in `Identity providers > Backends > 00000000-0000-0000-0000-000000000001` section.
+The server uses its public client to perform second step issuance / presentation, the associated identity provider is not configured by default and may be associated in public client edition page, in the authentication tab.
 
 ### 3.2 Generate client DID
 
