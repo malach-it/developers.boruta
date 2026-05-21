@@ -44,6 +44,8 @@ __Time to live (in seconds)__ the time to live of the overall credential, defini
 
 __Add claim__ would add a claim containing identity information to the credential.
 
+__Scope restriction__ to access the verifiable credential, a list of scopes can be requested. The access token used to obtain the credential must be granted those scopes.
+
 #### Claims
 
 __Type__ the type of the current node in the claim tree.
