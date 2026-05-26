@@ -18,7 +18,7 @@
           "Clients"
         ],
         "summary": "List clients",
-        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients</code> list all the clients available on the server</p>",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients</code> list all the clients available on the server</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "listclients",
         "parameters": [],
         "responses": {
@@ -69,13 +69,17 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "post": {
         "tags": [
           "Clients"
         ],
-        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>POST /api/clients</code> creates a client resource</p>",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>POST /api/clients</code> creates a client resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "summary": "Create a client",
         "operationId": "createaclient",
         "parameters": [],
@@ -164,7 +168,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/clients/{client_id}": {
@@ -173,7 +181,7 @@
           "Clients"
         ],
         "summary": "Show a client",
-        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients/:client_id</code> shows the identified client resource</p>",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>GET /api/clients/:client_id</code> shows the identified client resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "showaclient",
         "parameters": [
           {
@@ -243,14 +251,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Clients"
         ],
         "summary": "Update a client",
-        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>PATCH /api/clients/:client_id</code> updates the identified client resource</p>",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>PATCH /api/clients/:client_id</code> updates the identified client resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "updateaclient",
         "parameters": [
           {
@@ -360,14 +372,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Clients"
         ],
         "summary": "Delete a client",
-        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>DELETE /api/clients/:client_id</code> deletes permanently the identified client resource</p>",
+        "description": "<p>OAuth clients help web applications to get access to a resource server. Here configuration helps to manage them in order to use boruta for authentication and authorization. Beyond authorization, clients are the entrypoint for decentralized identity flows. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-clients\">the main documentation pages</a>.</p><p><code>DELETE /api/clients/:client_id</code> deletes permanently the identified client resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "deleteaclient",
         "parameters": [
           {
@@ -433,14 +449,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Clients"
         ],
         "summary": "Update a client",
-        "description": "<p><code>PUT /api/clients/:client_id</code> updates the identified client resource</p>",
+        "description": "<p><code>PUT /api/clients/:client_id</code> updates the identified client resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "replaceaclient",
         "parameters": [
           {
@@ -548,7 +568,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/identity-providers": {
@@ -557,7 +581,7 @@
           "Identity providers"
         ],
         "summary": "list identity providers",
-        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>GET /api/identity-providers</code> list all the identity providers available on the server</p>",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>GET /api/identity-providers</code> list all the identity providers available on the server</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "listidentityProviders",
         "parameters": [],
         "responses": {
@@ -603,14 +627,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "post": {
         "tags": [
           "Identity providers"
         ],
         "summary": "create a identity provider",
-        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>POST /api/identity-providers</code> creates an identity provider resource</p>",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>POST /api/identity-providers</code> creates an identity provider resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "createaidentityProvider",
         "parameters": [],
         "requestBody": {
@@ -657,7 +685,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/identity-providers/{identity_provider_id}": {
@@ -666,7 +698,7 @@
           "Identity providers"
         ],
         "summary": "show a identity provider",
-        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>GET /api/identity-providers/:identity_provider_id</code> shows the identified identity provider resource</p>",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>GET /api/identity-providers/:identity_provider_id</code> shows the identified identity provider resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "showaidentityProvider",
         "parameters": [
           {
@@ -725,14 +757,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Identity providers"
         ],
         "summary": "update a identity provider",
-        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>PATCH /api/identity-providers/:identity_provider_id</code> updates the identified identity provider resource</p>",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>PATCH /api/identity-providers/:identity_provider_id</code> updates the identified identity provider resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "updateaidentityProvider",
         "parameters": [
           {
@@ -812,14 +848,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Identity providers"
         ],
         "summary": "delete a identity provider",
-        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>DELETE /api/identity-providers/:identity_provider_id</code> deletes the identified identity provider resource</p>",
+        "description": "<p>Identity providers provide means of authentication. Providing authentication and identity management for the end-users, the configuration of the identity provider resource help managing the interfaces and the enabled features customizing the end-users authentication flow. The field descriptions are available in <a href=\"/docs/provider-configuration/configure-identity-providers\">the main documentation page</a>.</p><p><code>DELETE /api/identity-providers/:identity_provider_id</code> deletes the identified identity provider resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "deleteaidentityProvider",
         "parameters": [
           {
@@ -885,14 +925,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Identity providers"
         ],
         "summary": "update a identity provider",
-        "description": "<p><code>PUT /api/identity-providers/:identity_provider_id</code> updates the identified identity provider resource</p>",
+        "description": "<p><code>PUT /api/identity-providers/:identity_provider_id</code> updates the identified identity provider resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "replaceaidentityProvider",
         "parameters": [
           {
@@ -1000,7 +1044,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/identity-providers/{identity_provider_id}/templates/{template_name}": {
@@ -1009,7 +1057,7 @@
           "Identity provider templates"
         ],
         "summary": "Show an identity provider template",
-        "description": "Identity providers templates are user interfaces that enable end-users to interact with the authorization server. Using Mustache templating engine, variables can be interpolated, they are given in <a href=\"/docs/provider-configuration/identity-providers/templates-edition\">the main documentation pages</a>.",
+        "description": "Identity providers templates are user interfaces that enable end-users to interact with the authorization server. Using Mustache templating engine, variables can be interpolated, they are given in <a href=\"/docs/provider-configuration/identity-providers/templates-edition\">the main documentation pages</a>.<p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "showanidentityProvidertemplate",
         "parameters": [
           {
@@ -1089,14 +1137,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Identity provider templates"
         ],
         "summary": "Update an identity provider template",
-        "description": "<p><code>PATCH /api/identity-providers/:identity_provider_id/templates/:template_name</code> updates the identified identity provider template resource</p>",
+        "description": "<p><code>PATCH /api/identity-providers/:identity_provider_id/templates/:template_name</code> updates the identified identity provider template resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "updateaidentityprovidertemplate",
         "parameters": [
           {
@@ -1214,14 +1266,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Identity provider templates"
         ],
         "summary": "Delete an identity provider template",
-        "description": "<p><code>DELETE /api/identity-providers/:identity_provider_id/templates/:template_name</code> deletes the identified identity provider template resource</p>",
+        "description": "<p><code>DELETE /api/identity-providers/:identity_provider_id/templates/:template_name</code> deletes the identified identity provider template resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "deleteaidentityprovidertemplate",
         "parameters": [
           {
@@ -1312,7 +1368,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/users": {
@@ -1321,7 +1381,7 @@
           "Users"
         ],
         "summary": "list users",
-        "description": "`GET /api/users` list users",
+        "description": "`GET /api/users` list users<p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "listusers",
         "parameters": [],
         "responses": {
@@ -1372,14 +1432,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "post": {
         "tags": [
           "Users"
         ],
         "summary": "Create a user",
-        "description": "<p><code>POST /api/users</code> creates a user resource</p>",
+        "description": "<p><code>POST /api/users</code> creates a user resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "createauser",
         "parameters": [],
         "requestBody": {
@@ -1501,7 +1565,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/scopes": {
@@ -1556,7 +1624,14 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>GET /api/scopes</code> lists all the scopes available on the server</p>"
+        "description": "<p><code>GET /api/scopes</code> lists all the scopes available on the server</p><p><strong>Required scope (any of):</strong> <code>scopes:manage:all</code>, <code>users:manage:all</code>, <code>clients:manage:all</code>, <code>identity-providers:manage:all</code></p>",
+        "x-required-scopes": [
+          "scopes:manage:all",
+          "users:manage:all",
+          "clients:manage:all",
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "any"
       },
       "post": {
         "tags": [
@@ -1606,7 +1681,11 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>POST /api/scopes</code> creates a scope resource</p>"
+        "description": "<p><code>POST /api/scopes</code> creates a scope resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/scopes/{scope_id}": {
@@ -1674,7 +1753,11 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>GET /api/scopes/:scope_id</code> shows the identified scope resource</p>"
+        "description": "<p><code>GET /api/scopes/:scope_id</code> shows the identified scope resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
@@ -1756,7 +1839,11 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>PATCH /api/scopes/:scope_id</code> updates the identified scope resource</p>"
+        "description": "<p><code>PATCH /api/scopes/:scope_id</code> updates the identified scope resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
@@ -1796,14 +1883,18 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>DELETE /api/scopes/:scope_id</code> deletes the identified scope resource</p>"
+        "description": "<p><code>DELETE /api/scopes/:scope_id</code> deletes the identified scope resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Scopes"
         ],
         "summary": "Update a scope",
-        "description": "<p><code>PUT /api/scopes/:scope_id</code> updates the identified scope resource</p>",
+        "description": "<p><code>PUT /api/scopes/:scope_id</code> updates the identified scope resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
         "operationId": "replaceascope",
         "parameters": [
           {
@@ -1911,7 +2002,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/upstreams": {
@@ -1966,7 +2061,11 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>GET /api/upstreams</code> lists all the upstreams available on the server</p>"
+        "description": "<p><code>GET /api/upstreams</code> lists all the upstreams available on the server</p><p><strong>Required scope:</strong> <code>upstreams:manage:all</code></p>",
+        "x-required-scopes": [
+          "upstreams:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "post": {
         "tags": [
@@ -2028,7 +2127,11 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>POST /api/upstreams</code> creates an upstream resource</p>"
+        "description": "<p><code>POST /api/upstreams</code> creates an upstream resource</p><p><strong>Required scope:</strong> <code>upstreams:manage:all</code></p>",
+        "x-required-scopes": [
+          "upstreams:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/upstreams/{upstream_id}": {
@@ -2096,7 +2199,11 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>GET /api/upstreams/:upstream_id</code> shows the identified upstream resource</p>"
+        "description": "<p><code>GET /api/upstreams/:upstream_id</code> shows the identified upstream resource</p><p><strong>Required scope:</strong> <code>upstreams:manage:all</code></p>",
+        "x-required-scopes": [
+          "upstreams:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
@@ -2191,7 +2298,11 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>PATCH /api/upstreams/:upstream_id</code> updates the identified upstream resource</p>"
+        "description": "<p><code>PATCH /api/upstreams/:upstream_id</code> updates the identified upstream resource</p><p><strong>Required scope:</strong> <code>upstreams:manage:all</code></p>",
+        "x-required-scopes": [
+          "upstreams:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
@@ -2231,14 +2342,18 @@
             "bearer": []
           }
         ],
-        "description": "<p><code>DELETE /api/upstreams/:upstream_id</code> deletes the identified upstream resource</p>"
+        "description": "<p><code>DELETE /api/upstreams/:upstream_id</code> deletes the identified upstream resource</p><p><strong>Required scope:</strong> <code>upstreams:manage:all</code></p>",
+        "x-required-scopes": [
+          "upstreams:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Upstreams"
         ],
         "summary": "Update a upstream",
-        "description": "<p><code>PUT /api/upstreams/:upstream_id</code> updates the identified upstream resource</p>",
+        "description": "<p><code>PUT /api/upstreams/:upstream_id</code> updates the identified upstream resource</p><p><strong>Required scope:</strong> <code>upstreams:manage:all</code></p>",
         "operationId": "replaceaupstream",
         "parameters": [
           {
@@ -2346,7 +2461,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "upstreams:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/roles": {
@@ -2355,7 +2474,7 @@
           "Roles"
         ],
         "summary": "List roles",
-        "description": "<p><code>GET /api/roles</code> list all the roles available on the server</p>",
+        "description": "<p><code>GET /api/roles</code> list all the roles available on the server</p><p><strong>Required scope (any of):</strong> <code>scopes:manage:all</code>, <code>users:manage:all</code>, <code>clients:manage:all</code>, <code>identity-providers:manage:all</code></p>",
         "operationId": "listroles",
         "parameters": [],
         "responses": {
@@ -2406,14 +2525,21 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "scopes:manage:all",
+          "users:manage:all",
+          "clients:manage:all",
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "any"
       },
       "post": {
         "tags": [
           "Roles"
         ],
         "summary": "Create a role",
-        "description": "<p><code>POST /api/roles</code> creates a role resource</p>",
+        "description": "<p><code>POST /api/roles</code> creates a role resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
         "operationId": "createarole",
         "parameters": [],
         "requestBody": {
@@ -2515,7 +2641,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/roles/{role_id}": {
@@ -2524,7 +2654,7 @@
           "Roles"
         ],
         "summary": "Show a role",
-        "description": "<p><code>GET /api/roles/:role_id</code> shows the identified role resource</p>",
+        "description": "<p><code>GET /api/roles/:role_id</code> shows the identified role resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
         "operationId": "showarole",
         "parameters": [
           {
@@ -2594,14 +2724,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Roles"
         ],
         "summary": "Update a role",
-        "description": "<p><code>PATCH /api/roles/:role_id</code> updates the identified role resource</p>",
+        "description": "<p><code>PATCH /api/roles/:role_id</code> updates the identified role resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
         "operationId": "updatearole",
         "parameters": [
           {
@@ -2709,14 +2843,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Roles"
         ],
         "summary": "Update a role",
-        "description": "<p><code>PUT /api/roles/:role_id</code> updates the identified role resource</p>",
+        "description": "<p><code>PUT /api/roles/:role_id</code> updates the identified role resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
         "operationId": "replacearole",
         "parameters": [
           {
@@ -2824,14 +2962,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Roles"
         ],
         "summary": "Delete a role",
-        "description": "<p><code>DELETE /api/roles/:role_id</code> deletes the identified role resource</p>",
+        "description": "<p><code>DELETE /api/roles/:role_id</code> deletes the identified role resource</p><p><strong>Required scope:</strong> <code>scopes:manage:all</code></p>",
         "operationId": "deletearole",
         "parameters": [
           {
@@ -2900,7 +3042,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "scopes:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/key-pairs": {
@@ -2909,7 +3055,7 @@
           "Key pairs"
         ],
         "summary": "List key-pairs",
-        "description": "<p><code>GET /api/key-pairs</code> list all the key-pairs available on the server</p>",
+        "description": "<p><code>GET /api/key-pairs</code> list all the key-pairs available on the server</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "listkeypairs",
         "parameters": [],
         "responses": {
@@ -2960,14 +3106,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "post": {
         "tags": [
           "Key pairs"
         ],
         "summary": "Create a key-pair",
-        "description": "<p><code>POST /api/key-pairs</code> creates a key-pair resource</p>",
+        "description": "<p><code>POST /api/key-pairs</code> creates a key-pair resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "createakeypair",
         "parameters": [],
         "requestBody": {
@@ -3069,7 +3219,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/key-pairs/{key_pair_id}": {
@@ -3078,7 +3232,7 @@
           "Key pairs"
         ],
         "summary": "Show a key-pair",
-        "description": "<p><code>GET /api/key-pairs/:key_pair_id</code> shows the identified key-pair resource</p>",
+        "description": "<p><code>GET /api/key-pairs/:key_pair_id</code> shows the identified key-pair resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "showakeypair",
         "parameters": [
           {
@@ -3148,14 +3302,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Key pairs"
         ],
         "summary": "Update a key-pair",
-        "description": "<p><code>PATCH /api/key-pairs/:key_pair_id</code> updates the identified key-pair resource</p>",
+        "description": "<p><code>PATCH /api/key-pairs/:key_pair_id</code> updates the identified key-pair resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "updateakeypair",
         "parameters": [
           {
@@ -3263,14 +3421,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Key pairs"
         ],
         "summary": "Update a key-pair",
-        "description": "<p><code>PUT /api/key-pairs/:key_pair_id</code> updates the identified key-pair resource</p>",
+        "description": "<p><code>PUT /api/key-pairs/:key_pair_id</code> updates the identified key-pair resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "replaceakeypair",
         "parameters": [
           {
@@ -3378,14 +3540,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Key pairs"
         ],
         "summary": "Delete a key-pair",
-        "description": "<p><code>DELETE /api/key-pairs/:key_pair_id</code> deletes the identified key-pair resource</p>",
+        "description": "<p><code>DELETE /api/key-pairs/:key_pair_id</code> deletes the identified key-pair resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "deleteakeypair",
         "parameters": [
           {
@@ -3454,7 +3620,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/organizations": {
@@ -3463,7 +3633,7 @@
           "Organizations"
         ],
         "summary": "List organizations",
-        "description": "<p><code>GET /api/organizations</code> list all the organizations available on the server</p>",
+        "description": "<p><code>GET /api/organizations</code> list all the organizations available on the server</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "listorganizations",
         "parameters": [
           {
@@ -3554,14 +3724,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "post": {
         "tags": [
           "Organizations"
         ],
         "summary": "Create a organization",
-        "description": "<p><code>POST /api/organizations</code> creates a organization resource</p>",
+        "description": "<p><code>POST /api/organizations</code> creates a organization resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "createaorganization",
         "parameters": [],
         "requestBody": {
@@ -3663,7 +3837,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/organizations/{organization_id}": {
@@ -3672,7 +3850,7 @@
           "Organizations"
         ],
         "summary": "Show a organization",
-        "description": "<p><code>GET /api/organizations/:organization_id</code> shows the identified organization resource</p>",
+        "description": "<p><code>GET /api/organizations/:organization_id</code> shows the identified organization resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "showaorganization",
         "parameters": [
           {
@@ -3742,14 +3920,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Organizations"
         ],
         "summary": "Update a organization",
-        "description": "<p><code>PATCH /api/organizations/:organization_id</code> updates the identified organization resource</p>",
+        "description": "<p><code>PATCH /api/organizations/:organization_id</code> updates the identified organization resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "updateaorganization",
         "parameters": [
           {
@@ -3857,14 +4039,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Organizations"
         ],
         "summary": "Update a organization",
-        "description": "<p><code>PUT /api/organizations/:organization_id</code> updates the identified organization resource</p>",
+        "description": "<p><code>PUT /api/organizations/:organization_id</code> updates the identified organization resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "replaceaorganization",
         "parameters": [
           {
@@ -3972,14 +4158,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Organizations"
         ],
         "summary": "Delete a organization",
-        "description": "<p><code>DELETE /api/organizations/:organization_id</code> deletes the identified organization resource</p>",
+        "description": "<p><code>DELETE /api/organizations/:organization_id</code> deletes the identified organization resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "deleteaorganization",
         "parameters": [
           {
@@ -4048,7 +4238,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/backends": {
@@ -4057,7 +4251,7 @@
           "Backends"
         ],
         "summary": "List backends",
-        "description": "<p><code>GET /api/backends</code> list all the backends available on the server</p>",
+        "description": "<p><code>GET /api/backends</code> list all the backends available on the server</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "listbackends",
         "parameters": [],
         "responses": {
@@ -4108,14 +4302,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "post": {
         "tags": [
           "Backends"
         ],
         "summary": "Create a backend",
-        "description": "<p><code>POST /api/backends</code> creates a backend resource</p>",
+        "description": "<p><code>POST /api/backends</code> creates a backend resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "createabackend",
         "parameters": [],
         "requestBody": {
@@ -4217,7 +4415,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/backends/{backend_id}": {
@@ -4226,7 +4428,7 @@
           "Backends"
         ],
         "summary": "Show a backend",
-        "description": "<p><code>GET /api/backends/:backend_id</code> shows the identified backend resource</p>",
+        "description": "<p><code>GET /api/backends/:backend_id</code> shows the identified backend resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "showabackend",
         "parameters": [
           {
@@ -4296,14 +4498,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Backends"
         ],
         "summary": "Update a backend",
-        "description": "<p><code>PATCH /api/backends/:backend_id</code> updates the identified backend resource</p>",
+        "description": "<p><code>PATCH /api/backends/:backend_id</code> updates the identified backend resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "updateabackend",
         "parameters": [
           {
@@ -4411,14 +4617,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Backends"
         ],
         "summary": "Update a backend",
-        "description": "<p><code>PUT /api/backends/:backend_id</code> updates the identified backend resource</p>",
+        "description": "<p><code>PUT /api/backends/:backend_id</code> updates the identified backend resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "replaceabackend",
         "parameters": [
           {
@@ -4526,14 +4736,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Backends"
         ],
         "summary": "Delete a backend",
-        "description": "<p><code>DELETE /api/backends/:backend_id</code> deletes the identified backend resource</p>",
+        "description": "<p><code>DELETE /api/backends/:backend_id</code> deletes the identified backend resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "deleteabackend",
         "parameters": [
           {
@@ -4602,7 +4816,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/users/{user_id}": {
@@ -4611,7 +4829,7 @@
           "Users"
         ],
         "summary": "Show a user",
-        "description": "<p><code>GET /api/users/:user_id</code> shows the identified user resource</p>",
+        "description": "<p><code>GET /api/users/:user_id</code> shows the identified user resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "showauser",
         "parameters": [
           {
@@ -4681,14 +4899,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Users"
         ],
         "summary": "Update a user",
-        "description": "<p><code>PATCH /api/users/:user_id</code> updates the identified user resource</p>",
+        "description": "<p><code>PATCH /api/users/:user_id</code> updates the identified user resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "updateauser",
         "parameters": [
           {
@@ -4796,14 +5018,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "put": {
         "tags": [
           "Users"
         ],
         "summary": "Update a user",
-        "description": "<p><code>PUT /api/users/:user_id</code> updates the identified user resource</p>",
+        "description": "<p><code>PUT /api/users/:user_id</code> updates the identified user resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "replaceauser",
         "parameters": [
           {
@@ -4911,14 +5137,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Users"
         ],
         "summary": "Delete a user",
-        "description": "<p><code>DELETE /api/users/:user_id</code> deletes the identified user resource</p>",
+        "description": "<p><code>DELETE /api/users/:user_id</code> deletes the identified user resource</p><p><strong>Required scope:</strong> <code>users:manage:all</code></p>",
         "operationId": "deleteauser",
         "parameters": [
           {
@@ -4987,7 +5217,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "users:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/key-pairs/{key_pair_id}/rotate": {
@@ -4996,7 +5230,7 @@
           "Key pairs"
         ],
         "summary": "Rotate a key-pair",
-        "description": "<p><code>POST /api/key-pairs/:key_pair_id/rotate</code> rotates the identified key-pair resource</p>",
+        "description": "<p><code>POST /api/key-pairs/:key_pair_id/rotate</code> rotates the identified key-pair resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "rotateakeypair",
         "parameters": [
           {
@@ -5077,7 +5311,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/clients/{client_id}/regenerate_did": {
@@ -5086,7 +5324,7 @@
           "Clients"
         ],
         "summary": "Regenerate a client DID",
-        "description": "<p><code>POST /api/clients/:client_id/regenerate_did</code> regenerates the DID of the identified client resource</p>",
+        "description": "<p><code>POST /api/clients/:client_id/regenerate_did</code> regenerates the DID of the identified client resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "regenerateaclientdid",
         "parameters": [
           {
@@ -5167,7 +5405,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/clients/{client_id}/regenerate_key_pair": {
@@ -5176,7 +5418,7 @@
           "Clients"
         ],
         "summary": "Regenerate a client key pair",
-        "description": "<p><code>POST /api/clients/:client_id/regenerate_key_pair</code> regenerates the key pair of the identified client resource</p>",
+        "description": "<p><code>POST /api/clients/:client_id/regenerate_key_pair</code> regenerates the key pair of the identified client resource</p><p><strong>Required scope:</strong> <code>clients:manage:all</code></p>",
         "operationId": "regenerateaclientkeypair",
         "parameters": [
           {
@@ -5257,7 +5499,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "clients:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/upstreams/nodes": {
@@ -5266,7 +5512,7 @@
           "Upstreams"
         ],
         "summary": "List upstream nodes",
-        "description": "<p><code>GET /api/upstreams/nodes</code> lists upstream node names available on the server</p>",
+        "description": "<p><code>GET /api/upstreams/nodes</code> lists upstream node names available on the server</p><p><strong>Required scope:</strong> <code>upstreams:manage:all</code></p>",
         "operationId": "listupstreamnodes",
         "parameters": [],
         "responses": {
@@ -5317,7 +5563,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "upstreams:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/tokens": {
@@ -5326,7 +5576,7 @@
           "Tokens"
         ],
         "summary": "List tokens",
-        "description": "<p><code>GET /api/tokens</code> lists OAuth tokens available on the server</p>",
+        "description": "<p><code>GET /api/tokens</code> lists OAuth tokens available on the server</p><p><strong>Required scope:</strong> <code>tokens:read:all</code></p>",
         "operationId": "listtokens",
         "parameters": [
           {
@@ -5503,7 +5753,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "tokens:read:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/tokens/{token_id}/revoke": {
@@ -5512,7 +5766,7 @@
           "Tokens"
         ],
         "summary": "Revoke a token",
-        "description": "<p><code>POST /api/tokens/:token_id/revoke</code> revokes the identified token resource</p>",
+        "description": "<p><code>POST /api/tokens/:token_id/revoke</code> revokes the identified token resource</p><p><strong>Required scope:</strong> <code>tokens:read:all</code></p>",
         "operationId": "revokeatoken",
         "parameters": [
           {
@@ -5593,7 +5847,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "tokens:read:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/logs": {
@@ -5602,7 +5860,7 @@
           "Logs"
         ],
         "summary": "List logs",
-        "description": "<p><code>GET /api/logs</code> reads request or business log statistics for a time range</p>",
+        "description": "<p><code>GET /api/logs</code> reads request or business log statistics for a time range</p><p><strong>Required scope:</strong> <code>logs:read:all</code></p>",
         "operationId": "listlogs",
         "parameters": [
           {
@@ -5740,7 +5998,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "logs:read:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/configuration": {
@@ -5749,7 +6011,7 @@
           "Configuration"
         ],
         "summary": "Show configuration",
-        "description": "<p><code>GET /api/configuration</code> lists configuration entries available on the server</p>",
+        "description": "<p><code>GET /api/configuration</code> lists configuration entries available on the server</p><p><strong>Required scope:</strong> <code>configuration:manage:all</code></p>",
         "operationId": "showconfiguration",
         "parameters": [],
         "responses": {
@@ -5800,7 +6062,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "configuration:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/configuration/example-configuration-file": {
@@ -5809,7 +6075,7 @@
           "Configuration"
         ],
         "summary": "Show example configuration file",
-        "description": "<p><code>GET /api/configuration/example-configuration-file</code> shows an example configuration file</p>",
+        "description": "<p><code>GET /api/configuration/example-configuration-file</code> shows an example configuration file</p><p><strong>Required scope:</strong> <code>configuration:manage:all</code></p>",
         "operationId": "showexampleconfigurationfile",
         "parameters": [],
         "responses": {
@@ -5860,7 +6126,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "configuration:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/configuration/upload-configuration-file": {
@@ -5869,7 +6139,7 @@
           "Configuration"
         ],
         "summary": "Upload configuration file",
-        "description": "<p><code>POST /api/configuration/upload-configuration-file</code> uploads a configuration file</p>",
+        "description": "<p><code>POST /api/configuration/upload-configuration-file</code> uploads a configuration file</p><p><strong>Required scope:</strong> <code>configuration:manage:all</code></p>",
         "operationId": "uploadconfigurationfile",
         "parameters": [],
         "requestBody": {
@@ -5954,7 +6224,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "configuration:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/configuration/error-templates/{template_type}": {
@@ -5963,7 +6237,7 @@
           "Configuration"
         ],
         "summary": "Show an error template",
-        "description": "<p><code>GET /api/configuration/error-templates/:template_type</code> shows the identified error template resource</p>",
+        "description": "<p><code>GET /api/configuration/error-templates/:template_type</code> shows the identified error template resource</p><p><strong>Required scope:</strong> <code>configuration:manage:all</code></p>",
         "operationId": "showanerrortemplate",
         "parameters": [
           {
@@ -6033,14 +6307,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "configuration:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Configuration"
         ],
         "summary": "Update an error template",
-        "description": "<p><code>PATCH /api/configuration/error-templates/:template_type</code> updates the identified error template resource</p>",
+        "description": "<p><code>PATCH /api/configuration/error-templates/:template_type</code> updates the identified error template resource</p><p><strong>Required scope:</strong> <code>configuration:manage:all</code></p>",
         "operationId": "updateanerrortemplate",
         "parameters": [
           {
@@ -6148,14 +6426,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "configuration:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Configuration"
         ],
         "summary": "Delete an error template",
-        "description": "<p><code>DELETE /api/configuration/error-templates/:template_type</code> deletes the identified error template resource</p>",
+        "description": "<p><code>DELETE /api/configuration/error-templates/:template_type</code> deletes the identified error template resource</p><p><strong>Required scope:</strong> <code>configuration:manage:all</code></p>",
         "operationId": "deleteanerrortemplate",
         "parameters": [
           {
@@ -6236,7 +6518,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "configuration:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     },
     "/api/backends/{backend_id}/email-templates/{template_type}": {
@@ -6245,7 +6531,7 @@
           "Backends"
         ],
         "summary": "Show a backend email template",
-        "description": "<p><code>GET /api/backends/:backend_id/email-templates/:template_type</code> shows the identified backend email template resource</p>",
+        "description": "<p><code>GET /api/backends/:backend_id/email-templates/:template_type</code> shows the identified backend email template resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "showabackendemailtemplate",
         "parameters": [
           {
@@ -6325,14 +6611,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "patch": {
         "tags": [
           "Backends"
         ],
         "summary": "Update a backend email template",
-        "description": "<p><code>PATCH /api/backends/:backend_id/email-templates/:template_type</code> updates the identified backend email template resource</p>",
+        "description": "<p><code>PATCH /api/backends/:backend_id/email-templates/:template_type</code> updates the identified backend email template resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "updateabackendemailtemplate",
         "parameters": [
           {
@@ -6450,14 +6740,18 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       },
       "delete": {
         "tags": [
           "Backends"
         ],
         "summary": "Delete a backend email template",
-        "description": "<p><code>DELETE /api/backends/:backend_id/email-templates/:template_type</code> deletes the identified backend email template resource</p>",
+        "description": "<p><code>DELETE /api/backends/:backend_id/email-templates/:template_type</code> deletes the identified backend email template resource</p><p><strong>Required scope:</strong> <code>identity-providers:manage:all</code></p>",
         "operationId": "deleteabackendemailtemplate",
         "parameters": [
           {
@@ -6548,7 +6842,11 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-required-scopes": [
+          "identity-providers:manage:all"
+        ],
+        "x-required-scope-mode": "all"
       }
     }
   },
