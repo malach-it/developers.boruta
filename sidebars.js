@@ -33,7 +33,7 @@ const sidebars = {
           type: 'category',
           label: 'Clients configuration',
           link: { type: 'doc', id: 'provider-configuration/configure-clients' },
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
@@ -61,7 +61,7 @@ const sidebars = {
           type: 'category',
           label: 'Identity providers configuration',
           link: { type: 'doc', id: 'provider-configuration/configure-identity-providers' },
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
@@ -84,7 +84,7 @@ const sidebars = {
           type: 'category',
           label: 'Backends configuration',
           link: { type: 'doc', id: 'provider-configuration/configure-backends' },
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
@@ -122,7 +122,7 @@ const sidebars = {
           type: 'category',
           label: 'Scopes configruation',
           link: { type: 'doc', id: 'provider-configuration/configure-scopes' },
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
@@ -135,7 +135,7 @@ const sidebars = {
           type: 'category',
           label: 'Service registry configuration',
           link: { type: 'doc', id: 'provider-configuration/configure-service-registry' },
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
@@ -162,7 +162,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Global configuration',
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               type: 'doc',
@@ -175,6 +175,11 @@ const sidebars = {
               label: 'Configuration files'
             },
           ],
+        },
+        {
+          type: 'doc',
+          id: 'provider-configuration/environment-variables',
+          label: 'Environment variables'
         },
       ],
     },
