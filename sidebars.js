@@ -133,6 +133,34 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'Service registry configuration',
+          link: { type: 'doc', id: 'provider-configuration/configure-service-registry' },
+          collapsed: false,
+          items: [
+            {
+              type: 'doc',
+              id: 'provider-configuration/service-registry/general-configuration',
+              label: 'General configuration'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/service-registry/uris',
+              label: 'URIs'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/service-registry/authorization',
+              label: 'Authorization'
+            },
+            {
+              type: 'doc',
+              id: 'provider-configuration/service-registry/security',
+              label: 'Security'
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Global configuration',
           collapsed: false,
           items: [
@@ -148,7 +176,6 @@ const sidebars = {
             },
           ],
         },
-        'provider-configuration/configure-upstreams',
       ],
     },
     {
