@@ -28,3 +28,24 @@ The Administration interface gives the ability to create, update and delete clie
 All client operations are accessible through a REST API following the below description. All client management endpoints are protected with a Bearer token that can be obtained with any OAuth flow. In order to get access, you need to have an access token with the [private](provider-configuration/configure-scopes.md#public-vs-private-scopes) scope `clients:manage:all` granted.
 
 > Have a look at the [API documentation](/api/list-scopes)
+
+## Static configuration
+
+Scopes can be loaded from static configuration files with the `scope` section.
+
+```yaml
+---
+version: "1.0"
+configuration:
+  scope:
+    - id: "00000000-0000-0000-0000-000000000004"
+      name: "profile"
+      label: "Profile"
+      public: true
+    - id: "00000000-0000-0000-0000-000000000005"
+      name: "api:write"
+      label: "Write API data"
+      public: false
+```
+
+> Have a look at [configuration files](/docs/provider-configuration/configuration-files#scope)

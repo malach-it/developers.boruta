@@ -31,3 +31,28 @@ The Administration interface gives the ability to create, update and delete back
 All client operations are accessible through a REST API following the below description. All client management endpoints are protected with a Bearer token that can be obtained with any OAuth flow. In order to get access, you need to have an access token with the [private](provider-configuration/configure-scopes.md#public-vs-private-scopes) scope `configuration:manage:all` granted.
 
 > Have a look at the [API documentation](/api/show-an-error-template)
+
+## Static configuration
+
+Error templates can be updated from static configuration files with the `error_template` section. The referenced template `type` must already exist.
+
+```yaml
+---
+version: "1.0"
+configuration:
+  error_template:
+    - type: "400"
+      content: |
+        {"error":"bad_request","message":"{{ reason.message }}"}
+    - type: "403"
+      content: |
+        {"error":"forbidden","message":"{{ reason.message }}"}
+    - type: "404"
+      content: |
+        {"error":"not_found","message":"{{ reason.message }}"}
+    - type: "500"
+      content: |
+        {"error":"server_error","message":"{{ reason.message }}"}
+```
+
+> Have a look at [configuration files](/docs/provider-configuration/configuration-files#error_template)

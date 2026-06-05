@@ -46,11 +46,22 @@ Upstreams can also be loaded from configuration files. `gateway` entries create 
 
 ```yaml
 ---
+version: "1.0"
 configuration:
   node_name: "orders-node"
   aliases: ["orders.internal"]
+  cluster_ca:
+    certificate: |
+      -----BEGIN CERTIFICATE-----
+      [...]
+      -----END CERTIFICATE-----
+    private_key: |
+      -----BEGIN PRIVATE KEY-----
+      [...]
+      -----END PRIVATE KEY-----
   gateway:
     - authorize: true
+      virtual_host: "api.example.com"
       scheme: "https"
       host: "api.example.com"
       port: 443
@@ -60,18 +71,35 @@ configuration:
         GET: ["api:read"]
         POST: ["api:write"]
       forwarded_token_signature_alg: "HS256"
+      forwarded_token_secret: "secret"
+      error_content_type: "application/json"
+      unauthorized_response: |
+        {"error":"unauthorized"}
+      forbidden_response: |
+        {"error":"forbidden"}
       rate_limit_enabled: true
       rate_limit_count: 100
       rate_limit_time_unit: "minute"
+      rate_limit_penality: 500
+      rate_limit_timeout: 5000
+      rate_limit_memory_length: 50
   microgateway:
     - node_name: "orders-node"
+      authorize: true
       scheme: "https"
       host: "orders.internal"
       port: 8443
       uris: ["/orders"]
       strip_uri: true
       mtls_enabled: true
+      required_scopes:
+        GET: ["orders:read"]
+        POST: ["orders:write"]
 ```
+
+`cluster_ca` can also be provided to configure the service registry root certificate authority.
+
+> Have a look at [configuration files](/docs/provider-configuration/configuration-files#gateway)
 
 ## Manage through API
 

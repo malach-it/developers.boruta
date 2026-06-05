@@ -24,3 +24,31 @@ All identity provider operations are accessible through a REST API following the
 
 
 > Have a look at [API documentation](/api/list-identity-providers)
+
+## Static configuration
+
+Identity providers can be loaded from static configuration files with the `identity_provider` section. Use `backend_id` to attach the identity provider to a backend.
+
+```yaml
+---
+version: "1.0"
+configuration:
+  identity_provider:
+    - id: "00000000-0000-0000-0000-000000000002"
+      name: "Example identity provider"
+      backend_id: "00000000-0000-0000-0000-000000000001"
+      consentable: true
+      choose_session: true
+      registrable: true
+      confirmable: true
+      totpable: true
+      enforce_totp: false
+      user_editable: true
+      templates:
+        - type: "layout"
+          content: "<html>{{ content }}</html>"
+        - type: "login"
+          content: "<form>[...]</form>"
+```
+
+> Have a look at [configuration files](/docs/provider-configuration/configuration-files#identity_provider)
