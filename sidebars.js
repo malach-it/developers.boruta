@@ -169,12 +169,12 @@ const sidebars = {
               id: 'provider-configuration/configuration/error-templates',
               label: 'Error templates'
             },
-            {
-              type: 'doc',
-              id: 'provider-configuration/configuration/configuration-files',
-              label: 'Configuration files'
-            },
           ],
+        },
+        {
+          type: 'doc',
+          id: 'provider-configuration/configuration-files',
+          label: 'Configuration files'
         },
         {
           type: 'doc',
