@@ -15,23 +15,23 @@ Authorization parameters help __protect upstream routes__ before traffic reaches
 
 <div class="parameters">
 
-__authorize__ requires requests to provide a valid OAuth access token before they are forwarded.
+__Authorize__ requires requests to provide a valid OAuth access token before they are forwarded.
 
-__required_scopes__ restrict authorized traffic by HTTP method. Keys can be HTTP methods such as `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, or `*` for the default rule. Values are the OAuth scopes required for the method.
+__Required scopes__ restrict authorized traffic by HTTP method. Keys can be HTTP methods such as `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, or `*` for the default rule. Values are the OAuth scopes required for the method.
 
-__error_content_type__ defines the content type returned for gateway authorization errors.
+__Error content type__ defines the content type returned for gateway authorization errors.
 
-__forbidden_response__ customizes the response returned when the access token is valid but does not contain the required scopes.
+__Forbidden response__ customizes the response returned when the access token is valid but does not contain the required scopes.
 
-__unauthorized_response__ customizes the response returned when the request has no valid access token.
+__Unauthorized response__ customizes the response returned when the request has no valid access token.
 
-__forwarded_token_signature_alg__ enables boruta to send backend request context in the `X-Forwarded-Authorization` header. Supported algorithms are `HS256`, `HS384`, `HS512`, `RS256`, `RS384`, and `RS512`.
+__Forwarded token signature algorithm__ enables boruta to send backend request context in the `X-Forwarded-Authorization` header. Supported algorithms are `HS256`, `HS384`, `HS512`, `RS256`, `RS384`, and `RS512`.
 
-__forwarded_token_secret__ signs forwarded tokens when using an `HS*` algorithm. Leave it empty to let boruta generate one.
+__Forwarded token secret__ signs forwarded tokens when using an `HS*` algorithm. Leave it empty to let boruta generate one.
 
-__forwarded_token_private_key__ signs forwarded tokens when using an `RS*` algorithm. Leave it empty to let boruta generate a key pair.
+__Forwarded token private key__ signs forwarded tokens when using an `RS*` algorithm. Leave it empty to let boruta generate a key pair.
 
-__forwarded_token_public_key__ is the public key matching the generated or configured private key.
+__Forwarded token public key__ is the public key matching the generated or configured private key.
 
 </div>
 

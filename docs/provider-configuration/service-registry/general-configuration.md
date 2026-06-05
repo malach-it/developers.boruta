@@ -15,15 +15,15 @@ Upstream attributes help __manage gateway routing and protection rules__ for ser
 
 <div class="parameters">
 
-__node_name__ defines where the upstream is active. `global` upstreams are used by the main gateway entrypoint. A service registry node name makes the upstream active for the matching sidecar or microgateway node.
+__Node__ defines where the upstream is active. `global` upstreams are used by the main gateway entrypoint. A service registry node name makes the upstream active for the matching sidecar or microgateway node.
 
-__virtual_host__ restricts matching to requests received for a specific host. Leave it empty to match any host. When both a virtual-host upstream and a path-only upstream can match, the virtual-host upstream is selected first.
+__Virtual host__ restricts matching to requests received for a specific host. Leave it empty to match any host. When both a virtual-host upstream and a path-only upstream can match, the virtual-host upstream is selected first.
 
-__scheme__ defines the protocol used to reach the upstream service. Accepted values are `http` and `https`.
+__Scheme__ defines the protocol used to reach the upstream service. Accepted values are `http` and `https`.
 
-__host__ is the network host of the upstream service.
+__Host__ is the network host of the upstream service.
 
-__port__ is the network port of the upstream service.
+__Port__ is the network port of the upstream service.
 
 </div>
 

@@ -15,19 +15,19 @@ Security parameters help __protect upstream connections and traffic volume__. Th
 
 <div class="parameters">
 
-__mtls_enabled__ makes the gateway use mutual TLS when connecting to the upstream. This option requires the upstream scheme to be `https`.
+__Mutual TLS__ makes the gateway use mutual TLS when connecting to the upstream. This option requires the upstream scheme to be `https`.
 
-__rate_limit_enabled__ applies request throttling before traffic is forwarded to the upstream.
+__Rate limiting__ applies request throttling before traffic is forwarded to the upstream.
 
-__rate_limit_count__ defines how many requests are accepted during the selected time unit.
+__Request count__ defines how many requests are accepted during the selected time unit.
 
-__rate_limit_time_unit__ defines the rate-limit window. Accepted values are `millisecond`, `second`, and `minute`.
+__Time unit__ defines the rate-limit window. Accepted values are `millisecond`, `second`, and `minute`.
 
-__rate_limit_penality__ defines the delay applied after the accepted request count is exceeded.
+__Penality (ms)__ defines the delay applied after the accepted request count is exceeded.
 
-__rate_limit_timeout__ defines the maximum throttling wait time before the request is rejected.
+__Timeout (ms)__ defines the maximum throttling wait time before the request is rejected.
 
-__rate_limit_memory_length__ defines how many recent rate-limit entries are kept in memory for the upstream.
+__Memory length__ defines how many recent rate-limit entries are kept in memory for the upstream.
 
 </div>
 

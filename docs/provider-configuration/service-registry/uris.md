@@ -15,9 +15,9 @@ Upstream URIs define the __public path prefixes__ exposed by the gateway. They a
 
 <div class="parameters">
 
-__uris__ are the public path prefixes exposed by the gateway. The gateway matches requests by path prefix and gives priority to the longest matching URI, making it possible to define broad and specific routes on the same gateway.
+__URIs__ are the public path prefixes exposed by the gateway. The gateway matches requests by path prefix and gives priority to the longest matching URI, making it possible to define broad and specific routes on the same gateway.
 
-__strip_uri__ removes the matched URI prefix before forwarding the request to the upstream service. For example, with `/api` configured as URI, a request to `/api/users` is forwarded as `/users` when strip URI is enabled.
+__Strip URI__ removes the matched URI prefix before forwarding the request to the upstream service. For example, with `/api` configured as URI, a request to `/api/users` is forwarded as `/users` when strip URI is enabled.
 
 </div>
 
