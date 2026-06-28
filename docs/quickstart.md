@@ -73,6 +73,10 @@ __Credential flows__
 
 boruta is intended to implement [OpenID 4 Verifiable Credentials Issuance](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) and [OpenID 4 Verifiable Presentations](https://openid.net/specs/openid-4-verifiable-presentations-1_0.html). It helps getting Verifiable Credentials and store them within an identity wallet. And then to present them to be validated by the server.
 
+:::note
+In version `0.10.X` default verifiable credential example configuration set `BorutaCredentialJwtVc` scope as required. You can navigate to [verifiable credential configuration](http://localhost:8081/backends/00000000-0000-0000-0000-000000000001/edit) > `Verifiable credentials` to remove it from scope restriction section of the example credential.
+:::
+
 #### 3.3.1 Issuing a Verifiable credential
 
 On the administration homepage, following "Trigger example pre-authorized code flow with associated boruta wallet (load example data first)" link __triggers a Verifiable Credential issuance flow__. You can then register for a new account, and follow the tunnel. Through consent, you should see the credential offer page. Follow the "Get your verifiable credential" link and you will be redirected to boruta integrated wallet to store the offered credential.
