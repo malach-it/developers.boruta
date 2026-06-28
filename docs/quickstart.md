@@ -51,9 +51,9 @@ The server uses its public client to perform second step issuance / presentation
 
 ### 3.2 Generate client DID
 
-Navigating to [example client edit page](http://localhost:8081/clients/00000000-0000-0000-0000-000000000001/edit), in the security section, you have the ability to __generate example client DID__ ("Regenerate client did"). This will generate the DID associated to the client cryptograhic key pair.
-
-Navigating to __public client edit page__, in the authentication section, you have the ability to __set client identity provider__ ("User authentication"). Then the client associated to wallet authorization will be coupled to authentication means.
+Navigating to __public client edit page__:
+- in the security section, you have the ability to __generate example client DID__ ("Regenerate client did"). This will generate the DID associated to the client cryptograhic key pair.
+- in the authentication section, you have the ability to __set client identity provider__ ("User authentication"). Then the client associated to wallet authorization will be coupled to authentication means.
 
 ---
 
