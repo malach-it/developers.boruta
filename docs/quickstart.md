@@ -12,7 +12,14 @@ The easiest way to try the server is by __using docker compose__. It helps to __
 git clone https://github.com/malach-it/boruta-server.git
 ```
 
-## 2. Run an instance from docker-compose
+## 2. Configure and run an instance from docker-compose
+
+The server requires a secret key base to be set to perform authorization requests. You can configure it as an environment variable and must be at least 64 bytes long.
+
+```sh
+SECRET_KEY_BASE=change-me-generate-with-mix-phx-gen-secret
+[...]
+```
 
 You can build and run the docker images as follow:
 
