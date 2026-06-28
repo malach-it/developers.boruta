@@ -11,11 +11,11 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  // url: 'https://developers.boruta.patatoid.fr',
+  // url: 'https://documentation.boruta.patatoid.fr',
   url: 'https://malach-it.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/developers.boruta/',
+  baseUrl: '/documentation.boruta/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
