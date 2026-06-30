@@ -1,4 +1,4 @@
-# (WIP) boruta identity platform documentation
+# (WIP) boruta server documentation
 
 ## What is boruta?
 
